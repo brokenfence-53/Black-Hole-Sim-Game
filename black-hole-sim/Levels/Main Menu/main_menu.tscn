@@ -14,7 +14,7 @@ bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.5058824)
 bg_color = Color(0.19076231, 0.19076234, 0.19076222, 0.5058824)
 shadow_color = Color(0, 0, 0, 0)
 
-[node name="Main Menu" type="Control" unique_id=1981098260]
+[node name="Main Menu" type="Control" unique_id=1981098260 groups=["Main Menu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
