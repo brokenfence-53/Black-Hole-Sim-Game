@@ -1,8 +1,3 @@
 [gd_scene format=3 uid="uid://di482ccvg84ks"]
 
-[ext_resource type="Script" uid="uid://b7st06ot1ldj7" path="res://sprite_2d.gd" id="2_epypp"]
-
 [node name="Node2D" type="Node2D" unique_id=244036205]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996263361]
-script = ExtResource("2_epypp")
