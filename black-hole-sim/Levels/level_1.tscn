@@ -8,9 +8,9 @@
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(982, 538)
 
+[node name="PauseMenu" parent="." unique_id=1818061711 instance=ExtResource("2_dilhk")]
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2097959148]
 anchor_mode = 0
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
-
-[node name="PauseMenu" parent="." unique_id=1818061711 instance=ExtResource("2_dilhk")]
