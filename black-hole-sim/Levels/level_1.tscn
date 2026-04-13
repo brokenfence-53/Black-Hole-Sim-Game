@@ -2,15 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
 [ext_resource type="PackedScene" uid="uid://dtod47scy00d" path="res://pause_menu.tscn" id="2_dilhk"]
+[ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
-position = Vector2(982, 538)
+position = Vector2(1090, 609)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2097959148]
+position = Vector2(-1090, -609)
+anchor_mode = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 50.0
 
 [node name="PauseMenu" parent="." unique_id=1818061711 instance=ExtResource("2_dilhk")]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2097959148]
-anchor_mode = 0
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+[node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
+z_index = -1
+position = Vector2(969, 578)
+texture = ExtResource("3_3mhv4")
