@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://dh7qgjua6kt0d"]
 
 [ext_resource type="Script" uid="uid://b2bkw5xq236u8" path="res://Characters/player.gd" id="1_5mj4t"]
+[ext_resource type="Texture2D" uid="uid://o8c7qveoet3q" path="res://Sprites/BlackHole/Paint Layer 1.PNG" id="2_vb825"]
+[ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="3_65n15"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l48on"]
+radius = 190.0
 
 [node name="Player" type="CharacterBody2D" unique_id=780335499]
 script = ExtResource("1_5mj4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578408206]
+shape = SubResource("CircleShape2D_l48on")
+
+[node name="Event Horizon" type="Sprite2D" parent="." unique_id=313886363]
+position = Vector2(-10, -14)
+texture = ExtResource("2_vb825")
+
+[node name="Transparent" type="Sprite2D" parent="." unique_id=1032171214]
+position = Vector2(-10, -15)
+texture = ExtResource("3_65n15")

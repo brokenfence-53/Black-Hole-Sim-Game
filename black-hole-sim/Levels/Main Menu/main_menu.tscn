@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cmv0d1vbomjwe"]
 
+[ext_resource type="Script" uid="uid://cwhsqodqy2ycg" path="res://Levels/Main Menu/main_menu.gd" id="1_1ajju"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="1_e2pmq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1ajju")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1716254751]
 anchor_mode = 0
