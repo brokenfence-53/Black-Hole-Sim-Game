@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmv0d1vbomjwe"]
 
 [ext_resource type="Script" uid="uid://cwhsqodqy2ycg" path="res://Levels/Main Menu/main_menu.gd" id="1_1ajju"]
-[ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="1_e2pmq"]
+[ext_resource type="VideoStream" uid="uid://ch32netg7ethk" path="res://Sprites/Project Name 13(1).ogv" id="3_rjeep"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -133,21 +133,17 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Background" type="Node2D" parent="." unique_id=2009166050]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=914466819]
 z_index = -1
-
-[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1603064453]
-texture_filter = 1
-rotation = 3.1415927
-scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(2000, 1903)
-autoscroll = Vector2(20, 20)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1675508813]
-position = Vector2(-3846.0002, -3615.9998)
-texture = ExtResource("1_e2pmq")
-centered = false
+layout_mode = 0
+offset_left = 903.0
+offset_top = -256.0
+offset_right = 2631.0
+offset_bottom = 1426.0
+scale = Vector2(1.053, 1)
+stream = ExtResource("3_rjeep")
+autoplay = true
+loop = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
