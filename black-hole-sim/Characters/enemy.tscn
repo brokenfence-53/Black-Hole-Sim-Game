@@ -1,16 +1,46 @@
-[gd_scene format=3 uid="uid://dh31sg0q0p5s1"]
+[gd_scene format=3 uid="uid://bigdp65v0as3q"]
 
 [ext_resource type="Texture2D" uid="uid://cav33jbatbgmd" path="res://Sprites/Untitled103_20260413174355.png" id="1_04wy3"]
+[ext_resource type="Script" uid="uid://bl0anwp1add5y" path="res://Characters/enemy.gd" id="1_rtu5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtu5t"]
-radius = 394.36658
+radius = 233.4225
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdfay"]
+radius = 111.364265
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpxx0"]
+radius = 626.0511
 
 [node name="Enemy" type="CharacterBody2D" unique_id=434977644]
+script = ExtResource("1_rtu5t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501683136]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724304072]
+scale = Vector2(0.3, 0.31)
 shape = SubResource("CircleShape2D_rtu5t")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983907780]
 position = Vector2(16, 24)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_04wy3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1609515911]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1891466040]
+shape = SubResource("CircleShape2D_sdfay")
+
+[node name="enter_area" type="Area2D" parent="." unique_id=998664076]
+scale = Vector2(0.84654343, 0.83986145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=129933752]
+shape = SubResource("CircleShape2D_mpxx0")
+
+[node name="exit_area" type="Area2D" parent="." unique_id=1745198195]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=909813609]
+shape = SubResource("CircleShape2D_mpxx0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="enter_area" to="." method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="exit_area" to="." method="_on_exit_area_body_shape_exited"]

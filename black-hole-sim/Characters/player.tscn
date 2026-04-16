@@ -5,18 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="3_65n15"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l48on"]
-radius = 190.0
+radius = 211.97166
 
 [node name="Player" type="CharacterBody2D" unique_id=780335499]
 script = ExtResource("1_5mj4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578408206]
+scale = Vector2(0.9961257, 1)
 shape = SubResource("CircleShape2D_l48on")
 
 [node name="Event Horizon" type="Sprite2D" parent="." unique_id=313886363]
+z_index = 2
 position = Vector2(-10, -14)
 texture = ExtResource("2_vb825")
 
 [node name="Transparent" type="Sprite2D" parent="." unique_id=1032171214]
+z_index = 2
 position = Vector2(-10, -15)
 texture = ExtResource("3_65n15")

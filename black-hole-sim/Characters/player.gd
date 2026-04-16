@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 ## Video tut
 const max_speed: float = 100.0
 const acceleration: float = 50.0
@@ -59,5 +60,3 @@ func _dash_logic(delta: float) -> void:
 	#else:
 		#AnimationPlayer.play("idle")
 		#this is for if I add an animation
-
-	
