@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
+class_name MoonEnemy
 
 @onready var player_node: CharacterBody2D = get_parent().get_node("Player")
 var speed: float = 200.0
-
+var points: float = 10.0
 var sshould_chase: bool = false
+var dead: bool = false
+var talking_damage: bool = false
+var dir: Vector2
+var is_roaming: bool = true
+
+
 
 func _physics_process(delta: float) -> void:
 	if sshould_chase:
