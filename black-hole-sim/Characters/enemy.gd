@@ -30,6 +30,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
 		sshould_chase = true
+		await get_tree().create_timer(0.7).timeout
+		visible = false
 
 
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
