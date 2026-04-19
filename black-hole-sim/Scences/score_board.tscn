@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b2rq8m6j3huo4"]
+
+[ext_resource type="Script" uid="uid://dwhpib5uh1lui" path="res://Scences/score.gd" id="1_1x8r1"]
+
+[node name="Score Board" type="CanvasLayer" unique_id=2080044792]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=786586054]
+anchor_mode = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=18545783]
+offset_left = 758.0
+offset_top = 31.0
+offset_right = 1158.0
+offset_bottom = 51.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=730358887]
+offset_top = 10.0
+offset_right = 1920.0
+offset_bottom = 142.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1275554126]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer" unique_id=688316362]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/HBoxContainer" unique_id=1451037858]
+layout_mode = 2
+text = "Score:"
+
+[node name="Score" type="Label" parent="CenterContainer/HBoxContainer" unique_id=1489865074]
+layout_mode = 2
+horizontal_alignment = 1
+script = ExtResource("1_1x8r1")

@@ -19,6 +19,9 @@ func _physics_process(delta: float) -> void:
 		velocity = lerp(velocity , direction*speed , 0.5*delta)
 		move_and_slide()
 
+func handle_death():
+	Global.score = points + Global.score
+	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_node:
@@ -30,8 +33,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
 		sshould_chase = true
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(1.5).timeout
 		visible = false
+		handle_death()
 
 
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

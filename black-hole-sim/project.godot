@@ -15,6 +15,10 @@ run/main_scene="uid://cmv0d1vbomjwe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://b5ee2re2xgwfv"
+
 [display]
 
 window/size/viewport_width=1920
@@ -24,7 +28,8 @@ window/size/viewport_height=1080
 
 folder_colors={
 "res://Characters/": "orange",
-"res://Levels/": "green"
+"res://Levels/": "green",
+"res://Scripts/": "blue"
 }
 
 [input]
