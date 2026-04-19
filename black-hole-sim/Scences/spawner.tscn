@@ -2,10 +2,20 @@
 
 [ext_resource type="Script" uid="uid://bytmx68735n4g" path="res://Scences/spawner.gd" id="1_bv4fj"]
 
-[node name="Spawner" type="Marker2D" unique_id=2100483140]
+[node name="Spawner" type="Node2D" unique_id=700866444]
+
+[node name="Node2D" type="Marker2D" parent="." unique_id=2134191860]
+position = Vector2(-928, -552)
 script = ExtResource("1_bv4fj")
 
-[node name="Timer" type="Timer" parent="." unique_id=398557678]
+[node name="Timer" type="Timer" parent="Node2D" unique_id=398557678]
 wait_time = 0.2
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=2033967172]
+anchor_mode = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 50.0
+
+[connection signal="timeout" from="Node2D/Timer" to="." method="_on_timer_timeout"]
