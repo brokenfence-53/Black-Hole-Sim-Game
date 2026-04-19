@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4bonccukehmf"]
+
+[ext_resource type="Script" uid="uid://bytmx68735n4g" path="res://Scences/spawner.gd" id="1_bv4fj"]
+
+[node name="Spawner" type="Marker2D" unique_id=2100483140]
+script = ExtResource("1_bv4fj")
+
+[node name="Timer" type="Timer" parent="." unique_id=398557678]
+wait_time = 0.2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

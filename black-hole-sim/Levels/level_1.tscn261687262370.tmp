@@ -21,6 +21,10 @@ position_smoothing_speed = 50.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 50.0
 
+[node name="Enemy" parent="." unique_id=434977644 instance=ExtResource("2_syshm")]
+position = Vector2(1376, -208)
+scale = Vector2(0.09, 0.09)
+
 [node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
 z_index = -1
 position = Vector2(969, 578)
@@ -47,10 +51,3 @@ polygon = PackedVector2Array(-8, -141, -8, -139.8, -12.300003, -139, -20.399994,
 [node name="Polygon2D" type="Polygon2D" parent="GameArea" unique_id=458447771]
 
 [node name="Spawner" parent="." unique_id=127411336 instance=ExtResource("7_0urlm")]
-position = Vector2(1776, 78)
-
-[node name="EnemyHandler" type="Node2D" parent="." unique_id=848333116]
-
-[node name="Enemy" parent="EnemyHandler" unique_id=434977644 instance=ExtResource("2_syshm")]
-position = Vector2(1376, -208)
-scale = Vector2(0.09, 0.09)

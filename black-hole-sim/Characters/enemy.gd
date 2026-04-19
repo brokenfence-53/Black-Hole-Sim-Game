@@ -20,14 +20,13 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func handle_death():
+	self.queue_free()
 	Global.score = points + Global.score
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_node:
 		pass
-
-
 
 
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
