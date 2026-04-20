@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://b4bonccukehmf"]
 
 [ext_resource type="Script" uid="uid://bytmx68735n4g" path="res://Scences/spawner.gd" id="1_bv4fj"]
+[ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="2_kfv62"]
 
 [node name="Spawner" type="Marker2D" unique_id=179218117]
 script = ExtResource("1_bv4fj")
 
 [node name="Timer" type="Timer" parent="." unique_id=398557678]
-wait_time = 0.3
+wait_time = 2.0
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=491202557]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kfv62")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,18 +1,16 @@
 extends Marker2D
-@onready var enemynode : PackedScene = preload("res://Characters/enemy.tscn")
-var enemyamt: int = 0.00
-@export var point_1: Vector2 = Vector2(0,0)
-@export var point_2: Vector2 = Vector2(2000,1000)
+var enemynode : Resource = preload("res://Characters/enemy.tscn")
+var playernode : Resource = preload("res://Characters/player.tscn")
+var enemyamt: float = 0.00
+@export var point_1: Vector2 = Vector2(-500,-500)
+@export var point_2: Vector2 = Vector2(500,500)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 	# Replace with function body.
-func _physics_process(delta: float) -> void:
-	##if Input.is_action_just_pressed("mb"):
-		##spawn(get_global_mouse_position())
-	pass
+
 
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x)
@@ -25,11 +23,14 @@ func _spawn():
 	var enemyinstance: Node = enemynode.instantiate()
 	add_child(enemyinstance)
 	var randomposition: Vector2 = get_random_point_inside(point_1,point_2)
-	##var pos = instance.position 
-	scale = Vector2.ONE * randf_range(0.009,0.012)
+	##var pos = enemyinstance.position 
+	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.12)
 	enemyinstance.set_position(randomposition)
 	
-
+#func _physics_process(delta: float) -> void:
+	##if Input.is_action_just_pressed("mb"):
+		##_spawn()
+		#pass
 
 func _on_timer_timeout() -> void:
 	if enemyamt<5:

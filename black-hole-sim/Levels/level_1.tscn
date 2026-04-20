@@ -51,4 +51,4 @@ polygon = PackedVector2Array(-8, -141, -8, -139.8, -12.300003, -139, -20.399994,
 scale = Vector2(0.09, 0.09)
 
 [node name="Spawner" parent="." unique_id=700866444 instance=ExtResource("7_0urlm")]
-position = Vector2(901, 267)
+position = Vector2(1746, 92)
