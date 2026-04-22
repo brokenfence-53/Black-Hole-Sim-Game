@@ -1,5 +1,6 @@
 extends Marker2D
-var enemynode : Resource = preload("res://Characters/enemy.tscn")
+@export var enemy_prefab: Resource
+@export var target : Node2D
 @onready var player_node: CharacterBody2D = get_parent().get_node("Player")
 var enemyamt: float = 0.00
 @export var point_1: Vector2 = Vector2(-500,-500)
@@ -20,12 +21,13 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 
 
 func _spawn():
-	var enemyinstance: Node = enemynode.instantiate()
+	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
 	var randomposition: Vector2 = get_random_point_inside(point_1,point_2)
 	##var pos = enemyinstance.position 
 	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.12)
 	enemyinstance.set_position(randomposition)
+	
 	
 #func _physics_process(delta: float) -> void:
 	##if Input.is_action_just_pressed("mb"):
@@ -39,5 +41,5 @@ func _on_timer_timeout() -> void:
 		print(enemyamt)
 	else:
 		pass
-		
+	
 	

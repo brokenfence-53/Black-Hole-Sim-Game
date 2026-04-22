@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b4bonccukehmf"]
 
 [ext_resource type="Script" uid="uid://bytmx68735n4g" path="res://Scences/spawner.gd" id="1_bv4fj"]
+[ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="2_gdbbt"]
 [ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="2_kfv62"]
 
 [node name="Spawner" type="Marker2D" unique_id=179218117]
 script = ExtResource("1_bv4fj")
+enemy_prefab = ExtResource("2_gdbbt")
 
 [node name="Timer" type="Timer" parent="." unique_id=398557678]
 wait_time = 2.0

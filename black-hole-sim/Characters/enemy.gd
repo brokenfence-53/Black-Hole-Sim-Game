@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name MoonEnemy
 
-@onready var player_node: CharacterBody2D = get_parent().get_node("Player")
+@export var player_node: Resource 
 var speed: float = 200.0
 var points: float = 10.0
 var sshould_chase: bool = false
