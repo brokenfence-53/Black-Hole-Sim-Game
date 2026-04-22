@@ -26,12 +26,13 @@ func handle_death():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_node:
-		pass
+		print("Area2D")
 
 
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
+		print("entered body")
 		sshould_chase = true
 		await get_tree().create_timer(1.5).timeout
 		visible = false
