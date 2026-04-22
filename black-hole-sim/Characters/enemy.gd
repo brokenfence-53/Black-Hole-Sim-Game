@@ -29,6 +29,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		pass
 
 
+@warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
 		sshould_chase = true
@@ -37,6 +38,7 @@ func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 		handle_death()
 
 
+@warning_ignore("unused_parameter")
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
 		sshould_chase = false

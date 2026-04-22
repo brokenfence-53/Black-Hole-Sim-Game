@@ -1,6 +1,6 @@
 extends Marker2D
 var enemynode : Resource = preload("res://Characters/enemy.tscn")
-var playernode : Resource = preload("res://Characters/player.tscn")
+@onready var player_node: CharacterBody2D = get_parent().get_node("Player")
 var enemyamt: float = 0.00
 @export var point_1: Vector2 = Vector2(-500,-500)
 @export var point_2: Vector2 = Vector2(500,500)
