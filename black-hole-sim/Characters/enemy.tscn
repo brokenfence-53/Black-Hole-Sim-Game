@@ -14,6 +14,7 @@ radius = 626.0511
 
 [node name="Enemy" type="CharacterBody2D" unique_id=434977644]
 script = ExtResource("1_rtu5t")
+speed = 400.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724304072]
 scale = Vector2(0.3, 0.31)
@@ -26,6 +27,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_04wy3")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609515911]
+scale = Vector2(0.8522233, 0.7483928)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1891466040]
 shape = SubResource("CircleShape2D_sdfay")
@@ -41,6 +43,10 @@ shape = SubResource("CircleShape2D_mpxx0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=909813609]
 shape = SubResource("CircleShape2D_mpxx0")
 
+[node name="Timer" type="Timer" parent="." unique_id=949297895]
+wait_time = 2.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="enter_area" to="." method="_on_enter_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="exit_area" to="." method="_on_exit_area_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

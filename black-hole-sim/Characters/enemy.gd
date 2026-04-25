@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name MoonEnemy
 var player_node: CharacterBody2D 
-var speed: float = 200.0
+@export var speed: float = 0.0
 var points: float = 10.0
 var sshould_chase: bool = false
 var dead: bool = false
@@ -26,7 +26,8 @@ func handle_death():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_node:
-		print("Area2D")
+		##start()
+		pass
 
 
 @warning_ignore("unused_parameter")
@@ -34,9 +35,6 @@ func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 	if body == player_node:
 		print("entered body")
 		sshould_chase = true
-		await get_tree().create_timer(2.0).timeout
-		visible = false
-		handle_death()
 
 
 @warning_ignore("unused_parameter")
@@ -44,3 +42,9 @@ func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_ind
 	if body == player_node:
 		sshould_chase = false
 		
+
+
+func _on_timer_timeout(body: Node2D) -> void:
+	if body == player_node:
+		visible = false
+		handle_death()
