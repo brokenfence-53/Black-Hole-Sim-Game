@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 class_name MoonEnemy
-
-@export var player_node: Resource 
+var player_node: CharacterBody2D 
 var speed: float = 200.0
 var points: float = 10.0
 var sshould_chase: bool = false
@@ -34,7 +33,7 @@ func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 	if body == player_node:
 		print("entered body")
 		sshould_chase = true
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(2.0).timeout
 		visible = false
 		handle_death()
 

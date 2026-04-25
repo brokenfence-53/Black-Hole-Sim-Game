@@ -1,7 +1,6 @@
-extends Marker2D
-@export var enemy_prefab: Resource
-@export var target : Node2D
-@onready var player_node: CharacterBody2D = get_parent().get_node("Player")
+extends Node2D
+@export var enemy_prefab: PackedScene
+@export var target : CharacterBody2D 
 var enemyamt: float = 0.00
 @export var point_1: Vector2 = Vector2(-500,-500)
 @export var point_2: Vector2 = Vector2(500,500)
@@ -23,6 +22,7 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 func _spawn():
 	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
+	enemyinstance.player_node = target
 	var randomposition: Vector2 = get_random_point_inside(point_1,point_2)
 	##var pos = enemyinstance.position 
 	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.12)
@@ -40,6 +40,6 @@ func _on_timer_timeout() -> void:
 		enemyamt +=1
 		print(enemyamt)
 	else:
-		pass
+		return;
 	
 	

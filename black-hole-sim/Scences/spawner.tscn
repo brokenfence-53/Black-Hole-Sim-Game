@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="2_gdbbt"]
 [ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="2_kfv62"]
 
-[node name="Spawner" type="Marker2D" unique_id=179218117]
+[node name="Spawner" type="Node2D" unique_id=846447598]
 script = ExtResource("1_bv4fj")
 enemy_prefab = ExtResource("2_gdbbt")
 
