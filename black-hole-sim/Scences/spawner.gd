@@ -1,7 +1,8 @@
 extends Node2D
 @export var enemy_prefab: PackedScene
 @export var target : CharacterBody2D 
-var enemyamt: float = 0.00
+@export var enemymax: float 
+@export var enemyamt: float 
 @export var point_1: Vector2 = Vector2(-500,-500)
 @export var point_2: Vector2 = Vector2(500,500)
 
@@ -35,10 +36,8 @@ func _spawn():
 		#pass
 
 func _on_timer_timeout() -> void:
-	if enemyamt<5:
+	if enemyamt<=enemymax:
 		_spawn()
-		enemyamt +=1
-		print(enemyamt)
 	else:
 		return;
 	
