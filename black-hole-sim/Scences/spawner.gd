@@ -36,7 +36,8 @@ func _spawn():
 		#pass
 
 func _on_timer_timeout() -> void:
-	if enemyamt<=enemymax:
+	if !enemyamt>=enemymax:
+		enemyamt += 1
 		_spawn()
 	else:
 		return;

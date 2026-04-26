@@ -11,7 +11,7 @@ radius = 211.97166
 script = ExtResource("1_5mj4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578408206]
-scale = Vector2(0.9961257, 1)
+scale = Vector2(0.95267236, 0.94062483)
 shape = SubResource("CircleShape2D_l48on")
 
 [node name="Event Horizon" type="Sprite2D" parent="." unique_id=313886363]
