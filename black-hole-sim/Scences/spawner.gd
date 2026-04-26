@@ -5,7 +5,7 @@ extends Node2D
 @export var enemyamt: float 
 @export var point_1: Vector2 = Vector2(-500,-500)
 @export var point_2: Vector2 = Vector2(500,500)
-
+var a: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +20,8 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	return(random_point_inside)
 
 
-func _spawn():
+func _spawn(a):
+	a+= 1
 	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
 	enemyinstance.player_node = target
@@ -36,9 +37,9 @@ func _spawn():
 		#pass
 
 func _on_timer_timeout() -> void:
-	if enemyamt<=enemymax:
-		_spawn()
+	if a<enemymax:
+		_spawn(a)
 	else:
-		return;
+		return
 	
 	

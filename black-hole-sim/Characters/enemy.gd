@@ -25,9 +25,13 @@ func handle_death():
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player_node:
-		##start()
-		pass
+	if body != player_node:
+		return
+	await get_tree().create_timer(2.0).timeout
+	if body != player_node:
+		return
+	visible = false
+	handle_death()
 
 
 @warning_ignore("unused_parameter")
@@ -44,7 +48,4 @@ func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_ind
 		
 
 
-func _on_timer_timeout(body: Node2D) -> void:
-	if body == player_node:
-		visible = false
-		handle_death()
+	
