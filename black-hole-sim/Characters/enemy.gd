@@ -10,6 +10,7 @@ var talking_damage: bool = false
 var dir: Vector2
 var is_roaming: bool = true
 var enemyamt: float
+var active: bool = false
 
 
 func _physics_process(delta: float) -> void:
@@ -21,24 +22,22 @@ func _physics_process(delta: float) -> void:
 func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
-	enemyamt -= 1
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == player_node:
+		await get_tree().create_timer(2.0).timeout
+		visible = false
+		handle_death()
 	if body != player_node:
 		return
-	await get_tree().create_timer(2.0).timeout
-	if body != player_node:
-		return
-	visible = false
-	handle_death()
+	##body.death(true)
 	
 
 
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
-		print("entered body")
 		sshould_chase = true
 
 

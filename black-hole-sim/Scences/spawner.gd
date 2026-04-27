@@ -21,6 +21,7 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 
 
 func _spawn():
+	enemyamt = enemyamt + 1
 	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
 	enemyinstance.player_node = target
@@ -28,7 +29,7 @@ func _spawn():
 	##var pos = enemyinstance.position 
 	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.12)
 	enemyinstance.set_position(randomposition)
-	
+
 	
 #func _physics_process(delta: float) -> void:
 	##if Input.is_action_just_pressed("mb"):
@@ -36,10 +37,10 @@ func _spawn():
 		#pass
 
 func _on_timer_timeout() -> void:
-	if !enemyamt>=enemymax:
-		enemyamt += 1
+	if enemyamt<enemymax:
 		_spawn()
+		print(enemyamt)
 	else:
-		return;
+		pass
 	
 	
