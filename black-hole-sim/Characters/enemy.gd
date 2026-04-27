@@ -11,6 +11,8 @@ var dir: Vector2
 var is_roaming: bool = true
 var enemyamt: float
 
+func _ready() -> void:
+	Global.enemyamt += 1
 
 func _physics_process(delta: float) -> void:
 	if sshould_chase:
@@ -21,7 +23,7 @@ func _physics_process(delta: float) -> void:
 func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
-	enemyamt -= 1
+	Global.enemyamt -= 1
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

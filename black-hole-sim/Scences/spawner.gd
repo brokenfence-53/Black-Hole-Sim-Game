@@ -1,17 +1,20 @@
-extends Node2D
+extends Area2D
 @export var enemy_prefab: PackedScene
 @export var target : CharacterBody2D 
 @export var enemymax: float 
 @export var enemyamt: float 
-@export var point_1: Vector2 = Vector2(-500,-500)
-@export var point_2: Vector2 = Vector2(500,500)
-var a: int = 0
-
+@export var point_1: Vector2 = Vector2(-5000,-5000)
+@export var point_2: Vector2 = Vector2(5000,5000)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
 	# Replace with function body.
-
+func _process(_delta: float) -> void:
+	if !Global.enemyamt<enemymax:
+		return
+	else:
+		_spawn()
+		print(Global.enemyamt)
 
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x)
@@ -20,8 +23,8 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	return(random_point_inside)
 
 
-func _spawn(a):
-	a+= 1
+func _spawn():
+	enemyamt += 1
 	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
 	enemyinstance.player_node = target
@@ -37,9 +40,6 @@ func _spawn(a):
 		#pass
 
 func _on_timer_timeout() -> void:
-	if a<enemymax:
-		_spawn(a)
-	else:
-		return
+	pass
 	
 	

@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b2rpcn3yfnqrl"]
 
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
-[ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="2_syshm"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
-[ext_resource type="Texture2D" uid="uid://o8c7qveoet3q" path="res://Sprites/BlackHole/Paint Layer 1.PNG" id="4_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dtod47scy00d" path="res://Levels/pause_menu.tscn" id="4_syshm"]
 [ext_resource type="PackedScene" uid="uid://b2rq8m6j3huo4" path="res://Scences/score_board.tscn" id="6_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
@@ -13,38 +11,18 @@
 [node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
 position = Vector2(1746, 92)
 target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Enemy" parent="." unique_id=434977644 instance=ExtResource("2_syshm")]
-scale = Vector2(0.09, 0.09)
-speed = 50.0
+enemymax = 100.0
 
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2097959148]
-position = Vector2(-928, -552)
-anchor_mode = 0
+position = Vector2(3, 4)
+zoom = Vector2(0.07, 0.07)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 50.0
-
-[node name="GameArea" type="StaticBody2D" parent="." unique_id=351985199]
-position = Vector2(699, 331)
-scale = Vector2(10.633, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="GameArea" unique_id=1397683969]
-visible = false
-texture = ExtResource("4_rf6l5")
-
-[node name="AreaCollision" type="CollisionPolygon2D" parent="GameArea" unique_id=1951616541]
-position = Vector2(-194.95908, -115.80001)
-scale = Vector2(5, 5)
-build_mode = 1
-polygon = PackedVector2Array(-8, -141, -8, -139.8, -12.300003, -139, -20.399994, -139, -42.399994, -131, -45.5, -131, -64.5, -120, -66.7, -120, -84.7, -105, -86.899994, -105, -114.899994, -71, -116.3, -71, -127.3, -48, -128.5, -48, -132.5, -33, -133.6, -33, -140, -1.199997, -140, 28.200012, -133, 58, -133, 62.5, -120, 89.399994, -120, 91.70001, -113, 100.600006, -113, 102.79999, -87, 130.79999, -87, 132.1, -65, 147, -65, 148.29999, -47, 156.20001, -47, 157.5, -22, 164.4, -22, 165.9, 14.899994, 168, 27.299988, 168, 63.100006, 158, 66.5, 158, 88.5, 145, 90.79999, 145, 100.70001, 136, 102.79999, 136, 117.79999, 121, 119, 121, 133, 102, 134.20001, 102, 148.20001, 74, 149.5, 74, 153.5, 59, 154.70001, 59, 159.70001, 25, 161.1, 25, 159, -5.100006, 159, -13.300003, 149, -44.300003, 149, -47.5, 135, -71.5, 135, -73.8, 114, -97.8, 114, -99, 84, -121.100006, 84, -122.3, 57, -133.5, 57, -134.7, 29, -139.8, 29, -141)
-
-[node name="Polygon2D" type="Polygon2D" parent="GameArea" unique_id=458447771]
 
 [node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
 visible = false
