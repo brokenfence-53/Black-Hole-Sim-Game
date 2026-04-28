@@ -5,6 +5,8 @@ extends Node2D
 @export var enemyamt: float 
 @export var point_1: Vector2 = Vector2(-8000,-8000)
 @export var point_2: Vector2 = Vector2(8000,8000)
+@onready var area_2d: Area2D = $Area2D
+
 var enemy_can_spawn: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +16,7 @@ func _process(_delta: float) -> void:
 	if !Global.enemyamt<enemymax:
 		return
 	else:
-		_spawn()
+		pass
 
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x)
@@ -48,13 +50,13 @@ func _on_timer_timeout() -> void:
 
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if !Global.enemyamt<enemymax:
-		if body != enemy_prefab:
-				enemy_can_spawn = false
-				print("not in area")
+		return
+	else:
+		if body == enemy_prefab:
+			_spawn()
 		else:
-			if body == enemy_prefab:
-				_spawn()
-				enemy_can_spawn = true
-				print("in area")
+			return
+
+
 
 	

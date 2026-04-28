@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="2_gdbbt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfv62"]
-radius = 500.0
+radius = 432.33234
 
 [node name="Spawner" type="Node2D" unique_id=1123284579]
 script = ExtResource("1_bv4fj")
