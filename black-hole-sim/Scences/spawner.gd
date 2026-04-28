@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 	if !Global.enemyamt<enemymax:
 		return
 	else:
-		pass
+		_spawn()
 
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 	var x_value: float = randf_range(p1.x,p2.x)
@@ -48,14 +48,7 @@ func _on_timer_timeout() -> void:
 
 
 
-func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if !Global.enemyamt<enemymax:
-		return
-	else:
-		if body == enemy_prefab:
-			_spawn()
-		else:
-			return
+
 
 
 
