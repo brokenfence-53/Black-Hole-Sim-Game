@@ -9,98 +9,6 @@
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 
-[node name="Spawner3" parent="." unique_id=1390195130 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-603, -4393)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner2" parent="." unique_id=846447598 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(4559, -841)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner17" parent="." unique_id=1116537526 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-3451, -5872)
-rotation = -1.3135512
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner18" parent="." unique_id=1732069569 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-123.99988, -5962)
-rotation = -1.3135512
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-2980, 3899)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner4" parent="." unique_id=866484040 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(2565, -2165)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner5" parent="." unique_id=1000531792 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-2725, 1720)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner6" parent="." unique_id=2105823430 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-4297, -3386)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner7" parent="." unique_id=1006366045 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-6708, 831)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner8" parent="." unique_id=743781817 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(3616, 2487)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner9" parent="." unique_id=949822712 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(1293, 2061)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner10" parent="." unique_id=1811471541 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(2845, -5028)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner11" parent="." unique_id=664076676 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-4143, -1765)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner12" parent="." unique_id=1095544113 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-646, -2056)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner13" parent="." unique_id=23856703 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-6265, 4348)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner14" parent="." unique_id=1238159462 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-7837, -758)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner15" parent="." unique_id=706598273 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(-6384, -4238)
-target = NodePath("../Player")
-enemymax = 5.0
-
-[node name="Spawner16" parent="." unique_id=2119317153 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(76, 5115)
-target = NodePath("../Player")
-enemymax = 5.0
-
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
 
@@ -127,6 +35,11 @@ build_mode = 1
 polygon = PackedVector2Array(-8, -141, -8, -139.8, -12.300003, -139, -20.399994, -139, -42.399994, -131, -45.5, -131, -64.5, -120, -66.7, -120, -84.7, -105, -86.899994, -105, -114.899994, -71, -116.3, -71, -127.3, -48, -128.5, -48, -132.5, -33, -133.6, -33, -140, -1.199997, -140, 28.200012, -133, 58, -133, 62.5, -120, 89.399994, -120, 91.70001, -113, 100.600006, -113, 102.79999, -87, 130.79999, -87, 132.1, -65, 147, -65, 148.29999, -47, 156.20001, -47, 157.5, -22, 164.4, -22, 165.9, 14.899994, 168, 27.299988, 168, 63.100006, 158, 66.5, 158, 88.5, 145, 90.79999, 145, 100.70001, 136, 102.79999, 136, 117.79999, 121, 119, 121, 133, 102, 134.20001, 102, 148.20001, 74, 149.5, 74, 153.5, 59, 154.70001, 59, 159.70001, 25, 161.1, 25, 159, -5.100006, 159, -13.300003, 149, -44.300003, 149, -47.5, 135, -71.5, 135, -73.8, 114, -97.8, 114, -99, 84, -121.100006, 84, -122.3, 57, -133.5, 57, -134.7, 29, -139.8, 29, -141)
 
 [node name="Polygon2D" type="Polygon2D" parent="GameArea" unique_id=458447771]
+
+[node name="Spawner" parent="GameArea" unique_id=846447598 instance=ExtResource("7_0urlm")]
+position = Vector2(-65.73873, -33.100002)
+scale = Vector2(0.09404683, 0.1)
+enemymax = 5.0
 
 [node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
 visible = false
