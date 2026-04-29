@@ -18,8 +18,9 @@ func _process(delta: float) -> void:
 	
 
 func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Levels/Main Menu/main_menu.tscn") # Replace with function body.
-
+	Global.restart = true
 
 func _on_quit_pressed() -> void:
 	get_tree().quit() # Replace with function body.

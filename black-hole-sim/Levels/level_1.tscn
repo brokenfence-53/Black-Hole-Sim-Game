@@ -1,25 +1,26 @@
 [gd_scene format=3 uid="uid://b2rpcn3yfnqrl"]
 
+[ext_resource type="Script" uid="uid://drplyj5303awj" path="res://Levels/level_1.gd" id="1_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://dtod47scy00d" path="res://Levels/pause_menu.tscn" id="4_syshm"]
-[ext_resource type="PackedScene" uid="uid://kh1xqydxwnfn" path="res://Scences/area.tscn" id="6_0urlm"]
 [ext_resource type="PackedScene" uid="uid://b2rq8m6j3huo4" path="res://Scences/score_board.tscn" id="6_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
+[ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
+script = ExtResource("1_0urlm")
 
 [node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-position = Vector2(1746, 92)
+position = Vector2(51, -24)
 target = NodePath("../Player")
-enemymax = 100.0
+enemymax = 150.0
 
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2097959148]
 position = Vector2(3, 4)
-zoom = Vector2(0.07, 0.07)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 rotation_smoothing_enabled = true
@@ -35,5 +36,6 @@ texture = ExtResource("3_3mhv4")
 
 [node name="PauseMenu" parent="." unique_id=1818061711 instance=ExtResource("4_syshm")]
 
-[node name="Area" parent="." unique_id=846669480 instance=ExtResource("6_0urlm")]
-position = Vector2(1746, 0)
+[node name="LoadingScreen" parent="." unique_id=89083247 instance=ExtResource("8_77x7w")]
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
