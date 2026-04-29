@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://kh1xqydxwnfn"]
+
+[ext_resource type="Texture2D" uid="uid://o8c7qveoet3q" path="res://Sprites/BlackHole/Paint Layer 1.PNG" id="1_knikn"]
+[ext_resource type="Script" uid="uid://c2ug3yqrqp4u6" path="res://Scences/area_sprite.gd" id="2_q4wpu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctr00"]
+size = Vector2(39.811714, 64.40735)
+
+[node name="Area2D" type="Area2D" unique_id=1050709120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106254522]
+position = Vector2(-37.000244, 53.999573)
+scale = Vector2(402.04248, 249.87834)
+shape = SubResource("RectangleShape2D_ctr00")
+
+[node name="Area" type="Area2D" parent="." unique_id=1895222268]
+
+[node name="AreaSprite" type="Sprite2D" parent="Area" unique_id=1657702372]
+visible = false
+z_index = -1
+position = Vector2(-522.9999, -702.00006)
+scale = Vector2(54.908283, 52.431892)
+texture = ExtResource("1_knikn")
+script = ExtResource("2_q4wpu")
+
+[node name="AreaCollision" type="CollisionPolygon2D" parent="Area" unique_id=1931160973]
+position = Vector2(-510, -723.99994)
+scale = Vector2(53.165, 50)
+build_mode = 1
+polygon = PackedVector2Array(-8, -141, -8, -139.8, -12.300003, -139, -20.399994, -139, -42.399994, -131, -45.5, -131, -64.5, -120, -66.7, -120, -84.7, -105, -86.899994, -105, -114.899994, -71, -116.3, -71, -127.3, -48, -128.5, -48, -132.5, -33, -133.6, -33, -140, -1.199997, -140, 28.200012, -133, 58, -133, 62.5, -120, 89.399994, -120, 91.70001, -113, 100.600006, -113, 102.79999, -87, 130.79999, -87, 132.1, -65, 147, -65, 148.29999, -47, 156.20001, -47, 157.5, -22, 164.4, -22, 165.9, 14.899994, 168, 27.299988, 168, 63.100006, 158, 66.5, 158, 88.5, 145, 90.79999, 145, 100.70001, 136, 102.79999, 136, 117.79999, 121, 119, 121, 133, 102, 134.20001, 102, 148.20001, 74, 149.5, 74, 153.5, 59, 154.70001, 59, 159.70001, 25, 161.1, 25, 159, -5.100006, 159, -13.300003, 149, -44.300003, 149, -47.5, 135, -71.5, 135, -73.8, 114, -97.8, 114, -99, 84, -121.100006, 84, -122.3, 57, -133.5, 57, -134.7, 29, -139.8, 29, -141)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area/AreaCollision" unique_id=1503522419]
+position = Vector2(38.991817, 23.160007)
+scale = Vector2(0.2, 0.20000002)

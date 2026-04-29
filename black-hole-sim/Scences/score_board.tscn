@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2rq8m6j3huo4"]
 
 [ext_resource type="Script" uid="uid://dwhpib5uh1lui" path="res://Scences/score.gd" id="1_1x8r1"]
+[ext_resource type="Script" uid="uid://dj2nyi3uqosu1" path="res://Scences/enemy_amt.gd" id="2_xgvmr"]
 
 [node name="Score Board" type="CanvasLayer" unique_id=2080044792]
 
@@ -20,17 +21,34 @@ offset_top = 10.0
 offset_right = 1920.0
 offset_bottom = 142.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1275554126]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=123755748]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer" unique_id=688316362]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1283173008]
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="CenterContainer/HBoxContainer" unique_id=1451037858]
+[node name="EnemyAmtLAbel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=728358245]
+layout_mode = 2
+text = "Enemy Amount:"
+
+[node name="EnemyAmt" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=836779756]
+layout_mode = 2
+script = ExtResource("2_xgvmr")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=1377658869]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer" unique_id=1275554126]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=688316362]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1451037858]
 layout_mode = 2
 text = "Score:"
 
-[node name="Score" type="Label" parent="CenterContainer/HBoxContainer" unique_id=1489865074]
+[node name="Score" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1489865074]
 layout_mode = 2
 horizontal_alignment = 1
 script = ExtResource("1_1x8r1")

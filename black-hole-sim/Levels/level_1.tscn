@@ -1,25 +1,35 @@
 [gd_scene format=3 uid="uid://b2rpcn3yfnqrl"]
 
+[ext_resource type="Script" uid="uid://drplyj5303awj" path="res://Levels/level_1.gd" id="1_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
-[ext_resource type="Texture2D" uid="uid://o8c7qveoet3q" path="res://Sprites/BlackHole/Paint Layer 1.PNG" id="4_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://dtod47scy00d" path="res://Levels/pause_menu.tscn" id="4_syshm"]
 [ext_resource type="PackedScene" uid="uid://b2rq8m6j3huo4" path="res://Scences/score_board.tscn" id="6_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
+[ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
+script = ExtResource("1_0urlm")
 
+<<<<<<< HEAD
+=======
+[node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
+position = Vector2(51, -24)
+target = NodePath("../Player")
+enemymax = 150.0
+
+>>>>>>> timer
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2097959148]
-position = Vector2(-928, -552)
-anchor_mode = 0
+position = Vector2(3, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 rotation_smoothing_enabled = true
 rotation_smoothing_speed = 50.0
 
+<<<<<<< HEAD
 [node name="GameArea" type="StaticBody2D" parent="." unique_id=351985199]
 position = Vector2(699, 331)
 scale = Vector2(10.633, 10)
@@ -41,6 +51,8 @@ position = Vector2(-65.73873, -33.100002)
 scale = Vector2(0.09404683, 0.1)
 enemymax = 5.0
 
+=======
+>>>>>>> timer
 [node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
 visible = false
 z_index = -1
@@ -50,3 +62,7 @@ texture = ExtResource("3_3mhv4")
 [node name="Score Board" parent="." unique_id=2080044792 instance=ExtResource("6_rfktq")]
 
 [node name="PauseMenu" parent="." unique_id=1818061711 instance=ExtResource("4_syshm")]
+
+[node name="LoadingScreen" parent="." unique_id=89083247 instance=ExtResource("8_77x7w")]
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
