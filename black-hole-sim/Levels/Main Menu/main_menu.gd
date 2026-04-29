@@ -19,8 +19,9 @@ func _on_continue_pressed() -> void:
 
 func _on_new_game_pressed() -> void:
 	get_tree().paused = false 
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn") 
 	Global.restart = true
+	Global.transition_out = true 
+	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
 
 
 

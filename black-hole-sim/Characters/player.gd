@@ -21,11 +21,30 @@ var dash_reload_cost: float =0.5
 #how long a player has not been dashing for
 var dash_reload_timer: float = 0.0
 
+#scaling
+var capsule
+var base_height
+var base_radius
+var target_scale: float = 2.0
+var base_scale: float = 1.0
+var scale_scale: float
+var is_alive: bool = true
 
+func _ready() -> void:
+	capsule = $CollisionShape2D.shape as CircleShape2D
+	base_radius = capsule.radius
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("scaletest"):
+		if $Event_Horizon.scale == Vector2(base_scale,base_scale):
+			$Event_Horizon.scale =  Vector2(Global.playerscale,Global.playerscale)
+			capsule.radius = base_radius * Global.playerscale
+			$Event_Horizon.position.y = -capsule.radius
+			$CollisionShape2D.position = $Event_Horizon.position
+	_death()
+	
 func _physics_process(delta: float) -> void:
-	Global.playerscale -= 0.03
-	scale = Global.playerscale * scale
-	if dash_timer == 0.0: #so player movment does not overide the dash
+	if dash_timer == 0.0 and is_alive: #so player movment does not overide the dash
 		var input_movement: Vector2 = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up") 
 		).normalized()  ## making input return a 0/1/-1
@@ -41,6 +60,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = lerp(velocity.y, input_movement.y * max_speed, velocity_weight_y)
 	_dash_logic(delta)
 	move_and_slide()
+	
 func _dash_logic(delta: float) -> void:
 	var dash_dir: Vector2 = Vector2 (velocity.x,velocity.y)
 	if dashing and Input.is_action_just_pressed("dash"):
@@ -62,7 +82,20 @@ func _dash_logic(delta: float) -> void:
 	#else:
 		#AnimationPlayer.play("idle")
 		#this is for if I add an animation
+
+func _on_timer_timeout() -> void:
+	$Event_Horizon.scale =  Vector2(Global.playerscale,Global.playerscale)
+	capsule.radius = base_radius * Global.playerscale
+
+
+func _on_haking_radition_timeout() -> void:
+	if Global.playerscale <= 0:
+		Global.playerscale = 0
+		return
+	Global.playerscale = Global.playerscale - 0.05 #Replace with function body.
+
 func _death():
-	if Global.playerscale <= 0.15 or Input.is_action_just_pressed("mb"):
-		self.queue_free()
+	if Global.playerscale <= 0.15:
+		is_alive = false
 		get_tree().change_scene_to_file("res://Levels/end_credits.tscn")
+		queue_free()

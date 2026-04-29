@@ -11,15 +11,26 @@ radius = 211.97166
 script = ExtResource("1_5mj4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578408206]
-scale = Vector2(0.9961257, 1)
 shape = SubResource("CircleShape2D_l48on")
 
-[node name="Event Horizon" type="Sprite2D" parent="." unique_id=313886363]
+[node name="Event_Horizon" type="Sprite2D" parent="." unique_id=313886363]
 z_index = 2
 position = Vector2(-10, -14)
 texture = ExtResource("2_vb825")
 
-[node name="Transparent" type="Sprite2D" parent="." unique_id=1032171214]
+[node name="Transparent" type="Sprite2D" parent="Event_Horizon" unique_id=1032171214]
 z_index = 2
-position = Vector2(-10, -15)
+position = Vector2(0, -1)
 texture = ExtResource("3_65n15")
+
+[node name="Scale Update" type="Timer" parent="." unique_id=1133820721]
+wait_time = 0.25
+autostart = true
+
+[node name="Haking Radition" type="Timer" parent="." unique_id=143398248]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1804135751]
+
+[connection signal="timeout" from="Scale Update" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Haking Radition" to="." method="_on_haking_radition_timeout"]

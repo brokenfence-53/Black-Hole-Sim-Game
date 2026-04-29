@@ -24,7 +24,7 @@ func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
 	Global.enemyamt -= 1
-	Global.playerscale += 0.1
+	Global.playerscale = Global.playerscale + 0.1
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -40,7 +40,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
-		print("entered body")
+		#print("entered body")
 		sshould_chase = true
 
 
