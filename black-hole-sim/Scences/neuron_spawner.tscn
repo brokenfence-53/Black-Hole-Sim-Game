@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://blui1pncfgwlo"]
+
+[ext_resource type="Script" uid="uid://brw50nqo6jua0" path="res://neuron_spawner.gd" id="1_0xfe8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfv62"]
+size = Vector2(39.811714, 64.40735)
+
+[node name="NeuronSpawner" type="Node2D" unique_id=1123284579]
+script = ExtResource("1_0xfe8")
+metadata/_edit_horizontal_guides_ = [-7993.0, -9907.0, 8101.0]
+metadata/_edit_vertical_guides_ = [-8040.0, 7966.0]
+
+[node name="Timer" type="Timer" parent="." unique_id=398557678]
+wait_time = 0.5
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1086654590]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=35417608]
+position = Vector2(-37.000244, 53.999573)
+scale = Vector2(402.04248, 249.87834)
+shape = SubResource("RectangleShape2D_kfv62")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=103060203]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=391104538]
+build_mode = 1
+polygon = PackedVector2Array(-8100, -8100, 8100, -8100, 8100, 8100, -8100, 8100)
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

@@ -33,7 +33,7 @@ neuronmax = 20.0
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
 
-[node name="Camera2DPlayer" type="Camera2D" parent="Player" unique_id=2097959148]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2097959148]
 position = Vector2(3, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0

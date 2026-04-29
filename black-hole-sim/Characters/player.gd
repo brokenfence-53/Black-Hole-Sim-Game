@@ -35,12 +35,6 @@ func _ready() -> void:
 	base_radius = capsule.radius
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("scaletest"):
-		if $Event_Horizon.scale == Vector2(base_scale,base_scale):
-			$Event_Horizon.scale =  Vector2(Global.playerscale,Global.playerscale)
-			capsule.radius = base_radius * Global.playerscale
-			$Event_Horizon.position.y = -capsule.radius
-			$CollisionShape2D.position = $Event_Horizon.position
 	_death()
 	
 func _physics_process(delta: float) -> void:
@@ -86,8 +80,7 @@ func _dash_logic(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	$Event_Horizon.scale =  Vector2(Global.playerscale,Global.playerscale)
 	capsule.radius = base_radius * Global.playerscale
-
-
+	
 func _on_haking_radition_timeout() -> void:
 	if Global.playerscale <= 0:
 		Global.playerscale = 0
