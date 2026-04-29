@@ -12,6 +12,8 @@ var is_roaming: bool = true
 var enemyamt: float
 var active: bool = false
 
+func _ready() -> void:
+	Global.enemyamt += 1
 
 func _physics_process(delta: float) -> void:
 	if sshould_chase:
@@ -22,6 +24,7 @@ func _physics_process(delta: float) -> void:
 func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
+<<<<<<< HEAD
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -33,6 +36,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	##body.death(true)
 	
+=======
+	Global.enemyamt -= 1
+	##where we change global score
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body != player_node:
+		return
+	await get_tree().create_timer(2.0).timeout
+	if body != player_node:
+		return
+	visible = false
+	handle_death()
+>>>>>>> timer
 
 
 @warning_ignore("unused_parameter")
@@ -48,7 +64,4 @@ func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_ind
 		
 
 
-func _on_timer_timeout(body: Node2D) -> void:
-	if body == player_node:
-		visible = false
-		handle_death()
+	
