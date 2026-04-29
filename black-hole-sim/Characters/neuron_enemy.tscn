@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlvgyjp3sx14v"]
 
-[ext_resource type="Script" uid="uid://c5lfnxt1g8ege" path="res://neuron_enemy.gd" id="1_w6cad"]
+[ext_resource type="Script" path="res://neuron_enemy.gd" id="1_w6cad"]
 [ext_resource type="Texture2D" uid="uid://c61ajam5lqno8" path="res://Sprites/IMG_5371.png" id="2_w6cad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtu5t"]
@@ -22,7 +22,7 @@ disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983907780]
 position = Vector2(-7.999999, 7.999998)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.75, 1.75)
 texture = ExtResource("2_w6cad")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1609515911]

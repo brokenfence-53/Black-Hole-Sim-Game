@@ -34,7 +34,7 @@ func _spawn():
 	enemyinstance.player_node = target
 	var randomposition: Vector2 = get_random_point_inside(point_1,point_2)
 	##var pos = enemyinstance.position 
-	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.12)
+	enemyinstance.scale = Vector2.ONE * randf_range(0.18,0.24)
 	enemyinstance.set_position(randomposition)
 func _spawner():
 	if !Global.neuronsamt<neuronmax:

@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://b2rpcn3yfnqrl"]
 
-[ext_resource type="Script" uid="uid://drplyj5303awj" path="res://Levels/level_1.gd" id="1_0urlm"]
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://x5gtbn3p3q3x" path="res://Levels/pause_menu.tscn" id="4_syshm"]
-[ext_resource type="PackedScene" uid="uid://blui1pncfgwlo" path="res://Scences/neuron_spawner.tscn" id="6_77x7w"]
+[ext_resource type="PackedScene" path="res://Scences/neuron_spawner.tscn" id="6_77x7w"]
 [ext_resource type="PackedScene" uid="uid://b2rq8m6j3huo4" path="res://Scences/score_board.tscn" id="6_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dlvgyjp3sx14v" path="res://Characters/neuron_enemy.tscn" id="7_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
-[ext_resource type="Script" uid="uid://bhf8ojmni3jia" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
+[ext_resource type="Script" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 script = ExtResource("1_0urlm")
@@ -21,6 +21,7 @@ script = ExtResource("1_0urlm")
 [node name="LoadingScreen" parent="." unique_id=89083247 instance=ExtResource("8_77x7w")]
 
 [node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
+visible = false
 position = Vector2(51, -24)
 target = NodePath("../Player")
 enemymax = 300.0
@@ -28,7 +29,7 @@ enemymax = 300.0
 [node name="NeuronSpawner" parent="." unique_id=1123284579 node_paths=PackedStringArray("target") instance=ExtResource("6_77x7w")]
 enemy_prefab = ExtResource("7_xoyoh")
 target = NodePath("../Player")
-neuronmax = 20.0
+neuronmax = 100.0
 
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
