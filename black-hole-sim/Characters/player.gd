@@ -23,6 +23,8 @@ var dash_reload_timer: float = 0.0
 
 
 func _physics_process(delta: float) -> void:
+	Global.playerscale -= 0.03
+	scale = Global.playerscale * scale
 	if dash_timer == 0.0: #so player movment does not overide the dash
 		var input_movement: Vector2 = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"), Input.get_action_strength("down") - Input.get_action_strength("up") 
@@ -60,3 +62,7 @@ func _dash_logic(delta: float) -> void:
 	#else:
 		#AnimationPlayer.play("idle")
 		#this is for if I add an animation
+func _death():
+	if Global.playerscale <= 0.15 or Input.is_action_just_pressed("mb"):
+		self.queue_free()
+		get_tree().change_scene_to_file("res://Levels/end_credits.tscn")

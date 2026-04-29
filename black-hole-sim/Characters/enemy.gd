@@ -24,6 +24,7 @@ func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
 	Global.enemyamt -= 1
+	Global.playerscale += 0.1
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
