@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://b2rpcn3yfnqrl"]
 
-[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_0urlm"]
+[ext_resource type="Script" uid="uid://drplyj5303awj" path="res://Levels/level_1.gd" id="1_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dh7qgjua6kt0d" path="res://Characters/player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://tisgyt3dmf7o" path="res://Sprites/hubble-hh80-new-4filters-v7-finalcrop.webp" id="3_3mhv4"]
 [ext_resource type="PackedScene" uid="uid://x5gtbn3p3q3x" path="res://Levels/pause_menu.tscn" id="4_syshm"]
-[ext_resource type="PackedScene" path="res://Scences/neuron_spawner.tscn" id="6_77x7w"]
+[ext_resource type="PackedScene" uid="uid://bx4a4kfyjwqdn" path="res://Scences/neuron_spawner.tscn" id="6_77x7w"]
 [ext_resource type="PackedScene" uid="uid://b2rq8m6j3huo4" path="res://Scences/score_board.tscn" id="6_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dlvgyjp3sx14v" path="res://Characters/neuron_enemy.tscn" id="7_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
-[ext_resource type="Script" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
+[ext_resource type="PackedScene" uid="uid://26eaf86mn2nf" path="res://Scences/asteriod_spawner.tscn" id="8_rs4xw"]
+[ext_resource type="Script" uid="uid://bhf8ojmni3jia" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
+[ext_resource type="PackedScene" uid="uid://be47y65mhclyq" path="res://Characters/asteriod_enemy.tscn" id="9_lk57d"]
+[ext_resource type="Script" uid="uid://bv5mtljukaoa5" path="res://Scences/asteriod_spawner.gd" id="9_rs4xw"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 script = ExtResource("1_0urlm")
@@ -21,15 +24,23 @@ script = ExtResource("1_0urlm")
 [node name="LoadingScreen" parent="." unique_id=89083247 instance=ExtResource("8_77x7w")]
 
 [node name="Spawner" parent="." unique_id=700866444 node_paths=PackedStringArray("target") instance=ExtResource("7_0urlm")]
-visible = false
-position = Vector2(51, -24)
+position = Vector2(651, -7016)
 target = NodePath("../Player")
 enemymax = 300.0
 
 [node name="NeuronSpawner" parent="." unique_id=1123284579 node_paths=PackedStringArray("target") instance=ExtResource("6_77x7w")]
+position = Vector2(600, -6992)
 enemy_prefab = ExtResource("7_xoyoh")
 target = NodePath("../Player")
-neuronmax = 100.0
+neuronmax = 12.0
+
+[node name="AsteriodSpawner" parent="." unique_id=1271118707 node_paths=PackedStringArray("target") instance=ExtResource("8_rs4xw")]
+position = Vector2(600, -6992)
+script = ExtResource("9_rs4xw")
+enemy_prefab = ExtResource("9_lk57d")
+target = NodePath("../Player")
+asteriodmax = 1000.0
+asteriodamt = 0.0
 
 [node name="Player" parent="." unique_id=780335499 instance=ExtResource("1_n0qsc")]
 position = Vector2(928, 552)
@@ -42,6 +53,9 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 50.0
 script = ExtResource("9_f4pg2")
 
+[node name="Timer" type="Timer" parent="Player/Camera2DPlayer" unique_id=1922264949]
+autostart = true
+
 [node name="HubbleHh80New4FiltersV7Finalcrop" type="Sprite2D" parent="." unique_id=325426039]
 visible = false
 z_index = -1
@@ -49,3 +63,4 @@ position = Vector2(969, 578)
 texture = ExtResource("3_3mhv4")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="timeout" from="Player/Camera2DPlayer/Timer" to="Player/Camera2DPlayer" method="_on_timer_timeout"]

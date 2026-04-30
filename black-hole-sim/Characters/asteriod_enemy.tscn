@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://be47y65mhclyq"]
+
+[ext_resource type="Script" uid="uid://vwufg08jeqv4" path="res://Characters/asteriod_enemy.gd" id="1_tfx1p"]
+[ext_resource type="Texture2D" uid="uid://dpk2ngov6bqav" path="res://Sprites/Untitled110_20260429191219.PNG" id="2_ydwcm"]
+[ext_resource type="Texture2D" uid="uid://bgm8lcgpw6ww1" path="res://Sprites/Untitled111_20260429191208.PNG" id="3_rilur"]
+[ext_resource type="Texture2D" uid="uid://bqh5d12uu1xo6" path="res://Sprites/Untitled109_20260429082457.PNG" id="4_txtg0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqeqe"]
+radius = 15.65
+height = 31.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sdfay"]
+radius = 111.364265
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpxx0"]
+radius = 626.0511
+
+[node name="AsteriodEnemy" type="CharacterBody2D" unique_id=434977644]
+script = ExtResource("1_tfx1p")
+speed = 600.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=108568134]
+position = Vector2(48, 80)
+rotation = 1.5707964
+scale = Vector2(1.7499999, 1.7499999)
+texture = ExtResource("2_ydwcm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=39814685]
+position = Vector2(56, -48)
+scale = Vector2(1.7499999, 1.7499999)
+texture = ExtResource("3_rilur")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=983907780]
+position = Vector2(47.999996, -15.999998)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("4_txtg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724304072]
+scale = Vector2(7.97755, 5.4721117)
+shape = SubResource("CapsuleShape2D_gqeqe")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1609515911]
+scale = Vector2(1.4098182, -1.1208285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1891466040]
+shape = SubResource("CircleShape2D_sdfay")
+
+[node name="enter_area" type="Area2D" parent="." unique_id=998664076]
+scale = Vector2(0.84654343, 0.83986145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=129933752]
+scale = Vector2(0.6792095, 0.6533205)
+shape = SubResource("CircleShape2D_mpxx0")
+
+[node name="exit_area" type="Area2D" parent="." unique_id=1745198195]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=909813609]
+scale = Vector2(0.7559197, 0.7320376)
+shape = SubResource("CircleShape2D_mpxx0")
+
+[node name="Timer" type="Timer" parent="." unique_id=949297895]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="enter_area" to="." method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="exit_area" to="." method="_on_exit_area_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

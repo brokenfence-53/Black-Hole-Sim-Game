@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://b2rq8m6j3huo4"]
 
 [ext_resource type="Script" uid="uid://dwhpib5uh1lui" path="res://Scences/score.gd" id="1_1x8r1"]
+[ext_resource type="Script" uid="uid://cx6sisk3mxdjv" path="res://Scences/score_board.gd" id="1_reg2d"]
 [ext_resource type="Script" uid="uid://dj2nyi3uqosu1" path="res://Scences/enemy_amt.gd" id="2_xgvmr"]
 [ext_resource type="Script" uid="uid://ddx0trx0it7vd" path="res://Scences/player_scale.gd" id="3_ovplr"]
 
 [node name="Score Board" type="CanvasLayer" unique_id=2080044792]
+script = ExtResource("1_reg2d")
+minutes = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=730358887]
 offset_top = 10.0
 offset_right = 1920.0
-offset_bottom = 142.0
+offset_bottom = 152.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=123755748]
 layout_mode = 2
@@ -18,35 +21,56 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Min" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=1118880326]
+custom_minimum_size = Vector2(45, 50)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 65
-text = "00:"
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
 horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=1525570689]
+custom_minimum_size = Vector2(10, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = ":"
 
 [node name="Sec" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=1321669812]
+custom_minimum_size = Vector2(45, 50)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 65
-text = "00:"
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
 horizontal_alignment = 1
 
-[node name="Millisec" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=888976127]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=1879247677]
+custom_minimum_size = Vector2(10, 50)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 65
-text = "00"
+theme_override_font_sizes/normal_font_size = 32
+text = ":"
+
+[node name="Millisec" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=888976127]
+custom_minimum_size = Vector2(45, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=551283378]
 wait_time = 0.1
 autostart = true
 
+[node name="TimeLate" type="Timer" parent="CenterContainer/VBoxContainer/HBoxContainer3" unique_id=720415994]
+wait_time = 180.0
+autostart = true
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1283173008]
 layout_mode = 2
 
 [node name="EnemyAmtLAbel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=728358245]
+visible = false
 layout_mode = 2
 text = "Enemy Amount:"
 
 [node name="EnemyAmt" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2" unique_id=836779756]
+visible = false
 layout_mode = 2
 script = ExtResource("2_xgvmr")
 
@@ -57,13 +81,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=688316362]
+visible = false
 layout_mode = 2
 
 [node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1451037858]
+visible = false
 layout_mode = 2
 text = "Score:"
 
 [node name="Score" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1489865074]
+visible = false
 layout_mode = 2
 horizontal_alignment = 1
 script = ExtResource("1_1x8r1")
@@ -72,9 +99,14 @@ script = ExtResource("1_1x8r1")
 layout_mode = 2
 
 [node name="PlayerScaleLabel" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1137062484]
+visible = false
 layout_mode = 2
 text = "Player Scale:"
 
 [node name="PlayerScale" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=727839870]
+visible = false
 layout_mode = 2
 script = ExtResource("3_ovplr")
+
+[connection signal="timeout" from="CenterContainer/VBoxContainer/HBoxContainer3/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CenterContainer/VBoxContainer/HBoxContainer3/TimeLate" to="." method="_on_time_late_timeout"]

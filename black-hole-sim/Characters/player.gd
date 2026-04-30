@@ -61,7 +61,7 @@ func _dash_logic(delta: float) -> void:
 		dashing = false
 		dash_timer = dash_time #starting dash timer
 		dash_reload_timer = dash_reload_cost
-		velocity = dash_dir * dash_speed
+		velocity = dash_dir * dash_speed * Global.dash_boost
 	if dash_timer > 0.0:
 		dash_timer = max(0.0, dash_timer - delta)
 		if is_on_wall():
@@ -85,10 +85,15 @@ func _on_haking_radition_timeout() -> void:
 	if Global.playerscale <= 0:
 		Global.playerscale = 0
 		return
-	Global.playerscale = Global.playerscale - 0.05 #Replace with function body.
+	Global.playerscale = Global.playerscale - Global.millisecond*.000005 #Replace with function body.
 
 func _death():
 	if Global.playerscale <= 0.15:
+		Global.died = true
 		is_alive = false
 		get_tree().change_scene_to_file("res://Levels/end_credits.tscn")
 		queue_free()
+
+
+func _on_dash_boost_timeout() -> void:
+	Global.dash_boost += 1

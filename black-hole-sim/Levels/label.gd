@@ -3,9 +3,11 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.score = Global.millisecond + Global.score
-	self.text = str(Global.score)
+	if Global.died == true:
+		self.text = str("You didn't survive...")
+	else:
+		self.text = str("YOU SURVIVED! Great job beating the time.")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass

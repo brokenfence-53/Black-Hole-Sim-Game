@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlvgyjp3sx14v"]
 
-[ext_resource type="Script" path="res://neuron_enemy.gd" id="1_w6cad"]
+[ext_resource type="Script" uid="uid://c5lfnxt1g8ege" path="res://neuron_enemy.gd" id="1_w6cad"]
+[ext_resource type="Texture2D" uid="uid://d1bm5lodre77e" path="res://Sprites/V5+qZ3.png" id="2_bv56t"]
 [ext_resource type="Texture2D" uid="uid://c61ajam5lqno8" path="res://Sprites/IMG_5371.png" id="2_w6cad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtu5t"]
@@ -14,11 +15,16 @@ radius = 626.0511
 
 [node name="NeuronEnemy" type="CharacterBody2D" unique_id=434977644]
 script = ExtResource("1_w6cad")
+speed = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724304072]
 scale = Vector2(0.3, 0.31)
 shape = SubResource("CircleShape2D_rtu5t")
 disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1292131172]
+scale = Vector2(2.636052, 1.7003747)
+texture = ExtResource("2_bv56t")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983907780]
 position = Vector2(-7.999999, 7.999998)

@@ -1,14 +1,12 @@
-[gd_scene format=3 uid="uid://b4bonccukehmf"]
+[gd_scene format=3 uid="uid://26eaf86mn2nf"]
 
-[ext_resource type="Script" uid="uid://bytmx68735n4g" path="res://Scences/spawner.gd" id="1_bv4fj"]
-[ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="2_gdbbt"]
+[ext_resource type="Script" uid="uid://brw50nqo6jua0" path="res://neuron_spawner.gd" id="1_lyaf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfv62"]
 size = Vector2(39.811714, 64.40735)
 
-[node name="Spawner" type="Node2D" unique_id=1123284579]
-script = ExtResource("1_bv4fj")
-enemy_prefab = ExtResource("2_gdbbt")
+[node name="AsteriodSpawner" type="Node2D" unique_id=1123284579]
+script = ExtResource("1_lyaf4")
 metadata/_edit_horizontal_guides_ = [-7993.0, -9907.0, 8101.0]
 metadata/_edit_vertical_guides_ = [-8040.0, 7966.0]
 
@@ -27,11 +25,6 @@ shape = SubResource("RectangleShape2D_kfv62")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=391104538]
 build_mode = 1
-polygon = PackedVector2Array(-8100, -8100, 8100, -8100, 8100, 8100, -8100, 8100)
-
-[node name="CollisionPolygon2D2" type="Polygon2D" parent="StaticBody2D" unique_id=1853893880]
-visible = false
-color = Color(1, 1, 1, 0.1882353)
 polygon = PackedVector2Array(-8100, -8100, 8100, -8100, 8100, 8100, -8100, 8100)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

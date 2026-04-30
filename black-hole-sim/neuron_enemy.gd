@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-class_name NeuronEnemy
 var player_node: CharacterBody2D 
 @export var speed: float = 0.0
 var points: float = 100.0
@@ -12,7 +11,17 @@ var is_roaming: bool = true
 var enemyamt: float
 
 func _ready() -> void:
-	pass
+	get_node("Sprite2D2").visible = false
+	get_node("Sprite2D").visible = false
+	randomize()
+	var pngs = [1, 2]
+	var random_png = pngs[randi_range(0,pngs.size()-1)]
+	if random_png == 1:
+		get_node("Sprite2D").visible = true
+		Global.enemyamt += 1
+	if random_png == 2:
+		get_node("Sprite2D2").visible = true
+		Global.enemyamt += 1
 
 func _physics_process(delta: float) -> void:
 	if sshould_chase:
@@ -30,19 +39,17 @@ func handle_death():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body != player_node:
 		return
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	if body != player_node:
 		return
 	visible = false
 	handle_death()
-
 
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body == player_node:
 		#print("entered body")
 		sshould_chase = true
-
 
 @warning_ignore("unused_parameter")
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

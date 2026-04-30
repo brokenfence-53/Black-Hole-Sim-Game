@@ -8,4 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	camera_2d_player.scale =  Vector2(Global.playerscale,Global.playerscale)
+	pass
+
+func _on_timer_timeout() -> void:
+	camera_2d_player.zoom =  Vector2(1/Global.playerscale,1/Global.playerscale)
