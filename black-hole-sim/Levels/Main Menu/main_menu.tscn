@@ -361,7 +361,7 @@ theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 128
-text = "Your a Black Hole"
+text = "You're a Black Hole"
 
 [node name="Indent" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2142403210]
 layout_mode = 2

@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dlvgyjp3sx14v" path="res://Characters/neuron_enemy.tscn" id="7_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
-[ext_resource type="PackedScene" uid="uid://26eaf86mn2nf" path="res://Scences/asteriod_spawner.tscn" id="8_rs4xw"]
+[ext_resource type="PackedScene" path="res://Scences/asteriod_spawner.tscn" id="8_rs4xw"]
 [ext_resource type="Script" uid="uid://bhf8ojmni3jia" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
 [ext_resource type="PackedScene" uid="uid://be47y65mhclyq" path="res://Characters/asteriod_enemy.tscn" id="9_lk57d"]
-[ext_resource type="Script" uid="uid://bv5mtljukaoa5" path="res://Scences/asteriod_spawner.gd" id="9_rs4xw"]
+[ext_resource type="Script" path="res://Scences/asteriod_spawner.gd" id="9_rs4xw"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 script = ExtResource("1_0urlm")
