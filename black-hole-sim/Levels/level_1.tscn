@@ -73,7 +73,6 @@ position = Vector2(969, 578)
 texture = ExtResource("3_3mhv4")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1648402274]
-visible = false
 
 [node name="Shrinking" type="Sprite2D" parent="Node2D" unique_id=1329667964]
 position = Vector2(891, -277)
