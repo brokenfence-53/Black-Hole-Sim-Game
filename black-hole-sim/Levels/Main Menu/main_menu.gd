@@ -4,7 +4,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer/AnimationPlayer.play("default")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -12,15 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _on_continue_pressed() -> void:
-	get_tree().paused = false 
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn") 
+	LoadingScreen.change_scene_to("res://Levels/level_1.tscn")
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().paused = false 
 	Global.restart = true
-	Global.transition_out = true 
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	LoadingScreen.change_scene_to("res://Levels/level_1.tscn")
 
 
 

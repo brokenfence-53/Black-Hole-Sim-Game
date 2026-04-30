@@ -9,10 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://b4bonccukehmf" path="res://Scences/spawner.tscn" id="7_0urlm"]
 [ext_resource type="PackedScene" uid="uid://dlvgyjp3sx14v" path="res://Characters/neuron_enemy.tscn" id="7_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://bvfwqqatbngsk" path="res://Scences/loading_screen.tscn" id="8_77x7w"]
-[ext_resource type="PackedScene" path="res://Scences/asteriod_spawner.tscn" id="8_rs4xw"]
+[ext_resource type="PackedScene" uid="uid://26eaf86mn2nf" path="res://Scences/asteriod_spawner.tscn" id="8_rs4xw"]
 [ext_resource type="Script" uid="uid://bhf8ojmni3jia" path="res://Levels/camera_2d.gd" id="9_f4pg2"]
 [ext_resource type="PackedScene" uid="uid://be47y65mhclyq" path="res://Characters/asteriod_enemy.tscn" id="9_lk57d"]
 [ext_resource type="Script" path="res://Scences/asteriod_spawner.gd" id="9_rs4xw"]
+[ext_resource type="Texture2D" uid="uid://cvh27sg3d26hy" path="res://Sprites/Untitled112_20260430135254.PNG" id="14_w38ni"]
+[ext_resource type="Texture2D" uid="uid://7fm6hosvvh6o" path="res://Sprites/Untitled112_20260430135627.PNG" id="15_uclwg"]
+[ext_resource type="Texture2D" uid="uid://ckg6ajb0ug223" path="res://Sprites/Untitled112_20260430135629.PNG" id="16_8x6gh"]
+[ext_resource type="Texture2D" uid="uid://bchho65p0vmau" path="res://Sprites/Untitled112_20260430135630.PNG" id="17_442u8"]
+[ext_resource type="Texture2D" uid="uid://dw8lfjm2ih07c" path="res://Sprites/Untitled112_20260430135301.PNG" id="18_fxl23"]
+[ext_resource type="Texture2D" uid="uid://br3e5hift0xpg" path="res://Sprites/Untitled112_20260430135632.PNG" id="19_xg5g8"]
+[ext_resource type="Texture2D" uid="uid://dtcte7a5w0dex" path="res://Sprites/Untitled112_20260430135634.PNG" id="20_p7b0h"]
+[ext_resource type="Texture2D" uid="uid://5783ypgjqi4q" path="res://Sprites/Untitled112_20260430135637.PNG" id="21_2i07x"]
 
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 script = ExtResource("1_0urlm")
@@ -29,12 +37,14 @@ target = NodePath("../Player")
 enemymax = 300.0
 
 [node name="NeuronSpawner" parent="." unique_id=1123284579 node_paths=PackedStringArray("target") instance=ExtResource("6_77x7w")]
+visible = false
 position = Vector2(600, -6992)
 enemy_prefab = ExtResource("7_xoyoh")
 target = NodePath("../Player")
 neuronmax = 12.0
 
 [node name="AsteriodSpawner" parent="." unique_id=1271118707 node_paths=PackedStringArray("target") instance=ExtResource("8_rs4xw")]
+visible = false
 position = Vector2(600, -6992)
 script = ExtResource("9_rs4xw")
 enemy_prefab = ExtResource("9_lk57d")
@@ -61,6 +71,41 @@ visible = false
 z_index = -1
 position = Vector2(969, 578)
 texture = ExtResource("3_3mhv4")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1648402274]
+visible = false
+
+[node name="Shrinking" type="Sprite2D" parent="Node2D" unique_id=1329667964]
+position = Vector2(891, -277)
+texture = ExtResource("14_w38ni")
+
+[node name="Arrow" type="Sprite2D" parent="Node2D" unique_id=1732385882]
+position = Vector2(615, 282)
+texture = ExtResource("15_uclwg")
+
+[node name="Youre" type="Sprite2D" parent="Node2D" unique_id=90629239]
+position = Vector2(817, -306)
+texture = ExtResource("16_8x6gh")
+
+[node name="Spacebar" type="Sprite2D" parent="Node2D" unique_id=242147473]
+position = Vector2(726, 295)
+texture = ExtResource("17_442u8")
+
+[node name="Skey" type="Sprite2D" parent="Node2D" unique_id=1753779189]
+position = Vector2(1346, 378)
+texture = ExtResource("18_fxl23")
+
+[node name="Dkey" type="Sprite2D" parent="Node2D" unique_id=2086958096]
+position = Vector2(1356, 380)
+texture = ExtResource("19_xg5g8")
+
+[node name="AKey" type="Sprite2D" parent="Node2D" unique_id=792860229]
+position = Vector2(1338, 376)
+texture = ExtResource("20_p7b0h")
+
+[node name="Wkey" type="Sprite2D" parent="Node2D" unique_id=1044427889]
+position = Vector2(1349, 368)
+texture = ExtResource("21_2i07x")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="timeout" from="Player/Camera2DPlayer/Timer" to="Player/Camera2DPlayer" method="_on_timer_timeout"]

@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dh14bi6b2iwt2"]
+
+[ext_resource type="Texture2D" uid="uid://cvh27sg3d26hy" path="res://Sprites/Untitled112_20260430135254.PNG" id="1_h8scx"]
+[ext_resource type="Script" uid="uid://b4e33wfxor8ui" path="res://Scences/tutorial.gd" id="1_y0pvl"]
+[ext_resource type="Texture2D" uid="uid://7fm6hosvvh6o" path="res://Sprites/Untitled112_20260430135627.PNG" id="2_i3j3l"]
+[ext_resource type="Texture2D" uid="uid://ckg6ajb0ug223" path="res://Sprites/Untitled112_20260430135629.PNG" id="3_ipdvu"]
+[ext_resource type="Texture2D" uid="uid://bchho65p0vmau" path="res://Sprites/Untitled112_20260430135630.PNG" id="4_y0pvl"]
+[ext_resource type="Texture2D" uid="uid://dw8lfjm2ih07c" path="res://Sprites/Untitled112_20260430135301.PNG" id="5_7yci7"]
+[ext_resource type="Texture2D" uid="uid://br3e5hift0xpg" path="res://Sprites/Untitled112_20260430135632.PNG" id="6_4u46g"]
+[ext_resource type="Texture2D" uid="uid://dtcte7a5w0dex" path="res://Sprites/Untitled112_20260430135634.PNG" id="7_pjvq5"]
+[ext_resource type="Texture2D" uid="uid://5783ypgjqi4q" path="res://Sprites/Untitled112_20260430135637.PNG" id="8_1vxmp"]
+[ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="9_7yci7"]
+[ext_resource type="Script" uid="uid://cmlk5d11vfnmk" path="res://Scences/space_bar.gd" id="10_4u46g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6eet"]
+radius = 626.0511
+
+[node name="Tutorial" type="Node2D" unique_id=397608381]
+script = ExtResource("1_y0pvl")
+
+[node name="Shrinking" type="Sprite2D" parent="." unique_id=1540619372]
+position = Vector2(891, -277)
+texture = ExtResource("1_h8scx")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=168769016]
+position = Vector2(615, 282)
+texture = ExtResource("2_i3j3l")
+
+[node name="Youre" type="Sprite2D" parent="." unique_id=81777554]
+position = Vector2(817, -306)
+texture = ExtResource("3_ipdvu")
+
+[node name="Spacebar" type="Sprite2D" parent="." unique_id=656093435]
+visible = false
+position = Vector2(726, 295)
+texture = ExtResource("4_y0pvl")
+
+[node name="Skey" type="Sprite2D" parent="." unique_id=365699579]
+position = Vector2(1346, 378)
+texture = ExtResource("5_7yci7")
+
+[node name="Dkey" type="Sprite2D" parent="." unique_id=2014323288]
+position = Vector2(1356, 380)
+texture = ExtResource("6_4u46g")
+
+[node name="AKey" type="Sprite2D" parent="." unique_id=259501126]
+position = Vector2(1338, 376)
+texture = ExtResource("7_pjvq5")
+
+[node name="Wkey" type="Sprite2D" parent="." unique_id=1499525088]
+position = Vector2(1349, 368)
+texture = ExtResource("8_1vxmp")
+
+[node name="Enemy" parent="." unique_id=434977644 instance=ExtResource("9_7yci7")]
+visible = false
+
+[node name="SpaceBar" type="CharacterBody2D" parent="." unique_id=474357237]
+position = Vector2(696, 242)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceBar" unique_id=794202045]
+scale = Vector2(18.886677, 4.6472907)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpaceBar" unique_id=551768546]
+position = Vector2(64, 105)
+scale = Vector2(2.0722332, 2.1261828)
+texture = ExtResource("4_y0pvl")
+
+[node name="Area2D" type="Area2D" parent="SpaceBar" unique_id=104074298]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpaceBar/Area2D" unique_id=1198563682]
+scale = Vector2(18.886677, 4.6472907)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="SpaceBar" unique_id=522155874]
+scale = Vector2(0.84654343, 0.83986145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceBar/enter_area" unique_id=1062472219]
+scale = Vector2(0.4677957, 0.4863263)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="SpaceBar" unique_id=1453576376]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceBar/exit_area" unique_id=1718486456]
+scale = Vector2(0.46538928, 0.4957508)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="SpaceBar" unique_id=13242815]
+wait_time = 2.0
+
+[connection signal="body_entered" from="SpaceBar/Area2D" to="SpaceBar" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="SpaceBar/enter_area" to="SpaceBar" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="SpaceBar/exit_area" to="SpaceBar" method="_on_exit_area_body_shape_exited"]
