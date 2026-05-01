@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cdfudgckvhnga" path="res://Levels/end_credits.gd" id="1_mx8bh"]
 [ext_resource type="Script" uid="uid://b7nrpsvx3cg0f" path="res://Levels/highscore.gd" id="2_h6a7f"]
-[ext_resource type="Script" uid="uid://dbsuup4u1rhed" path="res://Levels/label.gd" id="2_tiy1h"]
 [ext_resource type="PackedScene" uid="uid://dqgcsn7f0bbh1" path="res://Scences/asteriods.tscn" id="3_wnnu0"]
 [ext_resource type="PackedScene" uid="uid://3qc667yrf3i1" path="res://Scences/end_spawner.tscn" id="4_a7w65"]
 [ext_resource type="FontFile" uid="uid://clqje1ylltx1c" path="res://fonts/nasalization/Nasalization Rg.otf" id="4_n5fgh"]
+[ext_resource type="Script" uid="uid://bgw6u2p8x1lvp" path="res://Levels/ending.gd" id="4_wnnu0"]
 [ext_resource type="FontFile" uid="uid://dnnyuxdayiqrw" path="res://fonts/Conthrax-SemiBold.otf" id="5_uvq7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6a7f"]
@@ -46,12 +46,12 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=42561995]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=144856541]
+[node name="Ending" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=144856541]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.48235294)
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
-script = ExtResource("2_tiy1h")
+script = ExtResource("4_wnnu0")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1867197266]
 layout_mode = 2
