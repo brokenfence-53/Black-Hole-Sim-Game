@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name SpaceBar
 @onready var player_node: CharacterBody2D = $"../../Player"
 @export var speed: float = 0.0
-var points: float = 10.0
+var points: float = 3.0
 var sshould_chase: bool = false
 var dead: bool = false
 var talking_damage: bool = false
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
-	Global.playerscale = Global.playerscale + 0.1
+	Global.playerscale = Global.playerscale + 0.03
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -31,7 +31,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("area entered")
 	if body == player_node:
 		#print("entered body")
 		sshould_chase = true
@@ -44,7 +43,6 @@ func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 
 @warning_ignore("unused_parameter")
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("area exited")
 	if body == player_node:
 		sshould_chase = false
 		

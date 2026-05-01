@@ -31,6 +31,7 @@ var scale_scale: float
 var is_alive: bool = true
 
 func _ready() -> void:
+	Global.playerscale = 1.0
 	capsule = $CollisionShape2D.shape as CircleShape2D
 	base_radius = capsule.radius
 
@@ -85,7 +86,7 @@ func _on_haking_radition_timeout() -> void:
 	if Global.playerscale <= 0:
 		Global.playerscale = 0
 		return
-	Global.playerscale = Global.playerscale - Global.millisecond*.000005 #Replace with function body.
+	Global.playerscale = Global.playerscale - Global.millisecond*.000005*Global.playerscale #Replace with function body.
 
 func _death():
 	if Global.playerscale <= 0.15:
@@ -96,4 +97,4 @@ func _death():
 
 
 func _on_dash_boost_timeout() -> void:
-	Global.dash_boost += 1
+	Global.dash_boost += 3

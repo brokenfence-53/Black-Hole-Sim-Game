@@ -4,7 +4,7 @@ extends Node2D
 @export var enemymax: float 
 @export var enemyamt: float = 0.00
 @export var point_1: Vector2 = Vector2(-8000,-8000)
-@export var point_2: Vector2 = Vector2(8000,7000)
+@export var point_2: Vector2 = Vector2(8000,6000)
 @onready var area_2d: Area2D = $Area2D
 
 var enemy_can_spawn: bool

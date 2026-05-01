@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dqgcsn7f0bbh1"]
+
+[ext_resource type="Texture2D" uid="uid://bgm8lcgpw6ww1" path="res://Sprites/Untitled111_20260429191208.PNG" id="1_e3me8"]
+[ext_resource type="Script" uid="uid://glpo256xs2qq" path="res://Scences/asteriods.gd" id="1_hip0e"]
+[ext_resource type="Texture2D" uid="uid://dpk2ngov6bqav" path="res://Sprites/Untitled110_20260429191219.PNG" id="2_4vv4q"]
+[ext_resource type="Texture2D" uid="uid://bqh5d12uu1xo6" path="res://Sprites/Untitled109_20260429082457.PNG" id="3_w6f0g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e3me8"]
+radius = 15.65
+height = 31.3
+
+[node name="Asteriods" type="CharacterBody2D" unique_id=1341213762]
+script = ExtResource("1_hip0e")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1256611650]
+position = Vector2(48, 80)
+rotation = 1.5707964
+scale = Vector2(1.7499999, 1.7499999)
+texture = ExtResource("2_4vv4q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=154008265]
+position = Vector2(56, -48)
+scale = Vector2(1.7499999, 1.7499999)
+texture = ExtResource("1_e3me8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1790544959]
+position = Vector2(47.999996, -15.999998)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_w6f0g")
+
+[node name="Timer" type="Timer" parent="." unique_id=701673183]
+wait_time = 2.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2038246295]
+scale = Vector2(11.508359, 7.8940306)
+shape = SubResource("CapsuleShape2D_e3me8")
+disabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

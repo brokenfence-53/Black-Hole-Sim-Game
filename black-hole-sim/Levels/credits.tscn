@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://qkl6n6u0mcg1"]
+
+[ext_resource type="Script" uid="uid://m8fd32i78im0" path="res://Levels/credits.gd" id="1_c1t8d"]
+[ext_resource type="Script" uid="uid://dbsuup4u1rhed" path="res://Levels/label.gd" id="2_g4wvt"]
+[ext_resource type="PackedScene" uid="uid://3qc667yrf3i1" path="res://Scences/end_spawner.tscn" id="3_mn1va"]
+[ext_resource type="FontFile" uid="uid://clqje1ylltx1c" path="res://fonts/nasalization/Nasalization Rg.otf" id="4_3x5pu"]
+[ext_resource type="FontFile" uid="uid://dnnyuxdayiqrw" path="res://fonts/Conthrax-SemiBold.otf" id="4_7qx3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjc1l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6beo"]
+bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.5058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4av4j"]
+bg_color = Color(0.19076231, 0.19076234, 0.19076222, 0.5058824)
+shadow_color = Color(0, 0, 0, 0)
+
+[node name="Credits" type="Control" unique_id=164157331]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c1t8d")
+
+[node name="end_spawner" parent="." unique_id=1057083513 instance=ExtResource("3_mn1va")]
+point_1 = Vector2(70, -232)
+
+[node name="end_spawner2" parent="." unique_id=47996629 instance=ExtResource("3_mn1va")]
+point_1 = Vector2(70, -232)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1194321562]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1077.0
+theme_override_constants/margin_left = 140
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="CenterContainer" parent="MarginContainer" unique_id=1232182408]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1705107385]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1877337651]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.48235294)
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+script = ExtResource("2_g4wvt")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2104298166]
+layout_mode = 2
+
+[node name="HighscoreLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=432922682]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5254902)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_3x5pu")
+theme_override_font_sizes/font_size = 80
+text = "Coded/Art by Terran Regen"
+
+[node name="Indent" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=758131753]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5254902)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 16
+
+[node name="HBoxContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1247506078]
+layout_mode = 2
+
+[node name="Indent" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1601005253]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+text = "111"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=485781098]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Main Menu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1546361684]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_7qx3r")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjc1l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j6beo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4av4j")
+text = "Main Menu
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1743157833]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_7qx3r")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjc1l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j6beo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4av4j")
+text = "Quit"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=2046700947]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

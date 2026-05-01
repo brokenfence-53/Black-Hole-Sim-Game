@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cmv0d1vbomjwe"]
 
 [ext_resource type="Script" uid="uid://cwhsqodqy2ycg" path="res://Levels/Main Menu/main_menu.gd" id="1_1ajju"]
+[ext_resource type="VideoStream" uid="uid://cstvi3cmt3xeu" path="res://Sprites/SunLoop.ogv" id="2_1ajju"]
+[ext_resource type="Script" uid="uid://jemlsunmp8f7" path="res://Levels/Main Menu/video_stream_player.gd" id="3_rjeep"]
+[ext_resource type="VideoStream" uid="uid://bfv0xf07yb6hv" path="res://Sprites/ExplodingSun.ogv" id="4_3foys"]
+[ext_resource type="FontFile" uid="uid://butbnrgxli8ab" path="res://fonts/Chopera.otf" id="5_vkcq7"]
+[ext_resource type="FontFile" uid="uid://dnnyuxdayiqrw" path="res://fonts/Conthrax-SemiBold.otf" id="5_wqh7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,6 +21,32 @@ shadow_color = Color(0, 0, 0, 0)
 
 [node name="Main Menu" type="CanvasLayer" unique_id=593575001 groups=["Main Menu"]]
 script = ExtResource("1_1ajju")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1264604106]
+editor_description = "add to stop so buttons work
+"
+z_index = -1
+offset_left = -133.0
+offset_top = -69.0
+offset_right = 3579.0
+offset_bottom = 2009.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("2_1ajju")
+autoplay = true
+loop = true
+script = ExtResource("3_rjeep")
+
+[node name="Exlpoding sun" type="VideoStreamPlayer" parent="." unique_id=1020110855]
+editor_description = "add to stop so buttons work
+"
+z_index = -1
+offset_left = -212.8
+offset_top = -110.4
+offset_right = 3499.2
+offset_bottom = 1967.6
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("4_3foys")
+script = ExtResource("3_rjeep")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=984213753]
 offset_right = 1917.0
@@ -37,7 +68,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/font_size = 128
+theme_override_fonts/font = ExtResource("5_vkcq7")
+theme_override_font_sizes/font_size = 112
 text = "You're a Black Hole"
 
 [node name="Indent" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2142403210]
@@ -54,6 +86,7 @@ layout_mode = 2
 [node name="Indent" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=537111210]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("5_wqh7t")
 text = "111"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=527880369]
@@ -62,6 +95,7 @@ theme_override_constants/separation = 20
 
 [node name="Continue" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2063742510]
 visible = false
+z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
@@ -76,12 +110,14 @@ text = "Continue"
 alignment = 0
 
 [node name="New Game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1535824841]
+z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_wqh7t")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -90,12 +126,14 @@ text = "New Game"
 alignment = 0
 
 [node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=483051311]
+z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_wqh7t")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -104,12 +142,14 @@ text = "Credits"
 alignment = 0
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=415322265]
+z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_wqh7t")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_06t4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7vrkn")
@@ -121,14 +161,8 @@ alignment = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1652861321]
-visible = false
-z_index = -1
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(48.059883, 26.935091)
-color = Color(0.048522703, 0.1225047, 0.19090119, 1)
-
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="Exlpoding sun" to="." method="_on_exlpoding_sun_finished"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

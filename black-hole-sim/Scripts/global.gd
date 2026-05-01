@@ -16,5 +16,6 @@ var millisecond: float = 0.00
 var died: bool 
 var survivie: bool
 var dash_boost: int = 1.0
+var endenemyamt: int = 0.0
 
 # Called when the node enters the scene tree for the first time.

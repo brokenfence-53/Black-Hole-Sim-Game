@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3qc667yrf3i1"]
+
+[ext_resource type="Script" uid="uid://yixl828x6ul6" path="res://end_spawner.gd" id="1_sic7d"]
+[ext_resource type="PackedScene" uid="uid://c34hrtjbxj7t6" path="res://end_enemy_type.tscn" id="2_q0uv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0uv2"]
+size = Vector2(4.7159195, 6.3710995)
+
+[node name="end_spawner" type="Node2D" unique_id=1057083513]
+script = ExtResource("1_sic7d")
+enemy_prefab = ExtResource("2_q0uv2")
+endenemymax = 100.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1217112179]
+wait_time = 0.5
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2023047119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=667586101]
+position = Vector2(988.00006, 299.9999)
+scale = Vector2(402.04248, 249.87834)
+shape = SubResource("RectangleShape2D_q0uv2")
+disabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,6 +9,7 @@ size = Vector2(39.811714, 64.40735)
 [node name="Spawner" type="Node2D" unique_id=1123284579]
 script = ExtResource("1_bv4fj")
 enemy_prefab = ExtResource("2_gdbbt")
+enemymax = 100.0
 metadata/_edit_horizontal_guides_ = [-7993.0, -9907.0, 8101.0]
 metadata/_edit_vertical_guides_ = [-8040.0, 7966.0]
 

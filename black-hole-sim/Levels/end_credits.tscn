@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cdfudgckvhnga" path="res://Levels/end_credits.gd" id="1_mx8bh"]
 [ext_resource type="Script" uid="uid://b7nrpsvx3cg0f" path="res://Levels/highscore.gd" id="2_h6a7f"]
 [ext_resource type="Script" uid="uid://dbsuup4u1rhed" path="res://Levels/label.gd" id="2_tiy1h"]
+[ext_resource type="PackedScene" uid="uid://dqgcsn7f0bbh1" path="res://Scences/asteriods.tscn" id="3_wnnu0"]
+[ext_resource type="PackedScene" uid="uid://3qc667yrf3i1" path="res://Scences/end_spawner.tscn" id="4_a7w65"]
+[ext_resource type="FontFile" uid="uid://clqje1ylltx1c" path="res://fonts/nasalization/Nasalization Rg.otf" id="4_n5fgh"]
+[ext_resource type="FontFile" uid="uid://dnnyuxdayiqrw" path="res://fonts/Conthrax-SemiBold.otf" id="5_uvq7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6a7f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -18,6 +22,15 @@ shadow_color = Color(0, 0, 0, 0)
 
 [node name="EndCredits" type="CanvasLayer" unique_id=1652343467]
 script = ExtResource("1_mx8bh")
+metadata/_edit_vertical_guides_ = [1000.0, 40.0, 1936.0]
+metadata/_edit_horizontal_guides_ = [-232.0]
+
+[node name="end_spawner" parent="." unique_id=1057083513 instance=ExtResource("4_a7w65")]
+point_1 = Vector2(70, -232)
+
+[node name="end_spawner2" parent="." unique_id=1703581194 instance=ExtResource("4_a7w65")]
+enemy_prefab = ExtResource("3_wnnu0")
+point_1 = Vector2(70, -232)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1513638405]
 offset_right = 1917.0
@@ -37,6 +50,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.48235294)
 theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
 script = ExtResource("2_tiy1h")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1867197266]
@@ -48,6 +62,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_n5fgh")
 theme_override_font_sizes/font_size = 80
 text = "Highscore:"
 
@@ -56,6 +71,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/shadow_offset_x = 10
 theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_n5fgh")
 theme_override_font_sizes/font_size = 80
 script = ExtResource("2_h6a7f")
 
@@ -86,6 +102,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_uvq7k")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_h6a7f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tiy1h")
@@ -100,6 +117,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_uvq7k")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_h6a7f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tiy1h")
@@ -113,6 +131,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.7764706)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5254902)
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_uvq7k")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_h6a7f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tiy1h")

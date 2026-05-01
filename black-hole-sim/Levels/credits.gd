@@ -1,27 +1,29 @@
-extends CanvasLayer
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.score = Global.score
-		
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
 
-
-func _on_main_menu_pressed() -> void:
-	get_tree().paused = false 
+func _on_new_game_pressed() -> void:
 	Global.restart = true
-	LoadingScreen.change_scene_to("res://Levels/Main Menu/main_menu.tscn")
+	LoadingScreen.change_scene_to("res://Levels/level_1.tscn")
+
 
 func _on_credits_pressed() -> void:
-	Global.restart = true
-	LoadingScreen.change_scene_to("res://Levels/credits.tscn")
+	pass # Replace with function body.
+
 
 func _on_quit_pressed() -> void:
 	get_tree().paused = false 
 	get_tree().quit() 
+
+
+func _on_main_menu_pressed() -> void:
+	Global.restart = true
+	LoadingScreen.change_scene_to("res://Levels/Main Menu/main_menu.tscn")

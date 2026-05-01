@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name MoonEnemy
 var player_node: CharacterBody2D 
 @export var speed: float = 0.0
-var points: float = 10.0
+var points: float = 5.0
 var sshould_chase: bool = false
 var dead: bool = false
 var talking_damage: bool = false
@@ -34,7 +34,7 @@ func handle_death():
 	self.queue_free()
 	Global.score = points + Global.score
 	Global.enemyamt -= 1
-	Global.playerscale = Global.playerscale + 0.1
+	Global.playerscale = Global.playerscale + 0.05
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

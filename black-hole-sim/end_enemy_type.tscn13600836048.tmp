@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c34hrtjbxj7t6"]
+
+[ext_resource type="Script" uid="uid://bwswu4fy5lpnf" path="res://end_enemy_type.gd" id="1_56hoj"]
+[ext_resource type="Texture2D" uid="uid://d32sdrmf126r6" path="res://Sprites/Untitled107_20260429081658.PNG" id="2_bpv3h"]
+[ext_resource type="Texture2D" uid="uid://cav33jbatbgmd" path="res://Sprites/Untitled103_20260413174355.png" id="3_otop4"]
+[ext_resource type="Texture2D" uid="uid://d1bm5lodre77e" path="res://Sprites/V5+qZ3.png" id="4_otop4"]
+[ext_resource type="Texture2D" uid="uid://bwv4sbm14430h" path="res://Sprites/sun/Frame_00.png" id="5_g3i30"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g3i30"]
+
+[node name="EndEnemyType" type="CharacterBody2D" unique_id=455621969]
+script = ExtResource("1_56hoj")
+
+[node name="Earth" type="Sprite2D" parent="." unique_id=350944512]
+position = Vector2(-7.999998, 0)
+rotation = 0.1134464
+scale = Vector2(2.0722332, 2.1261828)
+texture = ExtResource("2_bpv3h")
+
+[node name="MOON" type="Sprite2D" parent="." unique_id=1267042835]
+position = Vector2(16, 40.000004)
+scale = Vector2(0.6464481, 0.6464481)
+texture = ExtResource("3_otop4")
+
+[node name="Neuron" type="Sprite2D" parent="." unique_id=40288494]
+visible = false
+position = Vector2(-7.999999, 15.999999)
+scale = Vector2(2.3228626, 2.3833373)
+texture = ExtResource("4_otop4")
+
+[node name="I_O" type="Sprite2D" parent="." unique_id=135577193]
+visible = false
+position = Vector2(-8, 0)
+scale = Vector2(3.0952954, 2.1066196)
+texture = ExtResource("4_otop4")
+
+[node name="Sun" type="Sprite2D" parent="." unique_id=536369436]
+position = Vector2(-23.999998, -64)
+scale = Vector2(0.58934134, 0.60468453)
+texture = ExtResource("5_g3i30")
+
+[node name="Timer" type="Timer" parent="." unique_id=958772639]
+wait_time = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996689184]
+position = Vector2(0, 8)
+scale = Vector2(48.76347, 49.663086)
+shape = SubResource("CircleShape2D_g3i30")

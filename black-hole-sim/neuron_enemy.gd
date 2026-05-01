@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var player_node: CharacterBody2D 
 @export var speed: float = 0.0
-var points: float = 100.0
+var points: float = 50.0
 var sshould_chase: bool = false
 var dead: bool = false
 var talking_damage: bool = false

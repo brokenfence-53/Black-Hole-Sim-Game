@@ -1,10 +1,10 @@
 extends Node2D
 @export var enemy_prefab: PackedScene
 @export var target : CharacterBody2D 
-@export var asteriodmax: float 
-@export var asteriodamt: float = 0.00
-@export var point_1: Vector2 = Vector2(-8000,-8000)
-@export var point_2: Vector2 = Vector2(8000,6000)
+@export var endenemymax: float 
+@export var endenemyamt: float = 0.00
+@export var point_1: Vector2 = Vector2(0,-232)
+@export var point_2: Vector2 = Vector2(1900,-232)
 @onready var area_2d: Area2D = $Area2D
 
 var enemy_can_spawn: bool
@@ -14,10 +14,7 @@ func _ready() -> void:
 	
 	# Replace with function body.
 func _process(_delta: float) -> void:
-	if Global.restart != true:
-		_spawner()
-	else: 
-		return
+	pass
 	
 
 func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
@@ -28,16 +25,17 @@ func get_random_point_inside(p1: Vector2, p2: Vector2) -> Vector2:
 
 
 func _spawn():
-	Global.asteriodamt += 1
+	Global.endenemyamt += 1
 	var enemyinstance  = enemy_prefab.instantiate()
 	add_child(enemyinstance)
 	enemyinstance.player_node = target
 	var randomposition: Vector2 = get_random_point_inside(point_1,point_2)
 	##var pos = enemyinstance.position 
-	enemyinstance.scale = Vector2.ONE * randf_range(0.04,0.06)
+	enemyinstance.scale = Vector2.ONE * randf_range(0.09,0.2)
+	enemyinstance.rotation_degrees = randf_range(-180, 180)
 	enemyinstance.set_position(randomposition)
 func _spawner():
-	if !Global.asteriodamt<asteriodmax:
+	if !Global.endenemyamt<endenemymax:
 		return
 	else:
 		_spawn()
@@ -49,5 +47,7 @@ func _spawner():
 		#pass
 
 func _on_timer_timeout() -> void:
-	pass
-	
+	if Global.restart != true:
+		_spawner()
+	else: 
+		return
