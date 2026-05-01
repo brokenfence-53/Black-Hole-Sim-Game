@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 class_name SpaceBar
-var player_node: CharacterBody2D = get_parent().get_node("Player")
+@onready var player_node: CharacterBody2D = $"../../Player"
 @export var speed: float = 0.0
 var points: float = 10.0
 var sshould_chase: bool = false
@@ -27,24 +27,28 @@ func handle_death():
 	##where we change global score
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body != player_node:
-		return
-	await get_tree().create_timer(0.5).timeout
-	if body != player_node:
-		return
-	visible = false
-	handle_death()
-
+	pass
 
 @warning_ignore("unused_parameter")
 func _on_enter_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("area entered")
 	if body == player_node:
 		#print("entered body")
 		sshould_chase = true
+		await get_tree().create_timer(1.0).timeout
+		visible = false
+		handle_death()
+	else: 
+		return
 
 
 @warning_ignore("unused_parameter")
 func _on_exit_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("area exited")
 	if body == player_node:
 		sshould_chase = false
 		
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.

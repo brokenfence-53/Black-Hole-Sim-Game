@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://br3e5hift0xpg" path="res://Sprites/Untitled112_20260430135632.PNG" id="6_4u46g"]
 [ext_resource type="Texture2D" uid="uid://dtcte7a5w0dex" path="res://Sprites/Untitled112_20260430135634.PNG" id="7_pjvq5"]
 [ext_resource type="Texture2D" uid="uid://5783ypgjqi4q" path="res://Sprites/Untitled112_20260430135637.PNG" id="8_1vxmp"]
-[ext_resource type="PackedScene" uid="uid://bigdp65v0as3q" path="res://Characters/enemy.tscn" id="9_7yci7"]
 [ext_resource type="Script" uid="uid://cmlk5d11vfnmk" path="res://Scences/space_bar.gd" id="10_4u46g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdvu"]
@@ -20,45 +19,9 @@ radius = 626.0511
 [node name="Tutorial" type="Node2D" unique_id=397608381]
 script = ExtResource("1_y0pvl")
 
-[node name="Shrinking" type="Sprite2D" parent="." unique_id=1540619372]
-position = Vector2(891, -277)
-texture = ExtResource("1_h8scx")
-
-[node name="Arrow" type="Sprite2D" parent="." unique_id=168769016]
-position = Vector2(615, 282)
-texture = ExtResource("2_i3j3l")
-
-[node name="Youre" type="Sprite2D" parent="." unique_id=81777554]
-position = Vector2(817, -306)
-texture = ExtResource("3_ipdvu")
-
-[node name="Spacebar" type="Sprite2D" parent="." unique_id=656093435]
-visible = false
-position = Vector2(726, 295)
-texture = ExtResource("4_y0pvl")
-
-[node name="Skey" type="Sprite2D" parent="." unique_id=365699579]
-position = Vector2(1346, 378)
-texture = ExtResource("5_7yci7")
-
-[node name="Dkey" type="Sprite2D" parent="." unique_id=2014323288]
-position = Vector2(1356, 380)
-texture = ExtResource("6_4u46g")
-
-[node name="AKey" type="Sprite2D" parent="." unique_id=259501126]
-position = Vector2(1338, 376)
-texture = ExtResource("7_pjvq5")
-
-[node name="Wkey" type="Sprite2D" parent="." unique_id=1499525088]
-position = Vector2(1349, 368)
-texture = ExtResource("8_1vxmp")
-
-[node name="Enemy" parent="." unique_id=434977644 instance=ExtResource("9_7yci7")]
-visible = false
-
 [node name="SpaceBar" type="CharacterBody2D" parent="." unique_id=474357237]
-position = Vector2(696, 242)
-scale = Vector2(0.4848795, 0.5176758)
+position = Vector2(552.99994, 232.00006)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("10_4u46g")
 speed = 600.0
 
@@ -96,6 +59,315 @@ shape = SubResource("CircleShape2D_x6eet")
 [node name="Timer" type="Timer" parent="SpaceBar" unique_id=13242815]
 wait_time = 2.0
 
+[node name="Arrow2" type="CharacterBody2D" parent="." unique_id=920276253]
+position = Vector2(552, 51.000008)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow2" unique_id=832696520]
+scale = Vector2(2.3112583, -8.916652)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrow2" unique_id=1817585200]
+position = Vector2(-142.30338, 320.664)
+scale = Vector2(2.0722332, 2.1261828)
+texture = ExtResource("2_i3j3l")
+
+[node name="Area2D" type="Area2D" parent="Arrow2" unique_id=1252115635]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Arrow2/Area2D" unique_id=1322257001]
+scale = Vector2(5.382789, 14.184312)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="Arrow2" unique_id=1210893508]
+scale = Vector2(0.63383275, 0.6186194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow2/enter_area" unique_id=1355006791]
+scale = Vector2(0.4677957, 0.4863263)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="Arrow2" unique_id=490028369]
+scale = Vector2(0.8045641, 0.7304294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow2/exit_area" unique_id=511810398]
+scale = Vector2(0.46538928, 0.4957508)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="Arrow2" unique_id=1889283800]
+wait_time = 2.0
+
+[node name="W2" type="CharacterBody2D" parent="." unique_id=1316559837]
+position = Vector2(1273, 178)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="W2" unique_id=1618694344]
+scale = Vector2(2.4916167, -1.7867972)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="W2" unique_id=1654541814]
+position = Vector2(164.98944, 409.5227)
+scale = Vector2(2.1194606, 2.1281517)
+texture = ExtResource("8_1vxmp")
+
+[node name="Area2D" type="Area2D" parent="W2" unique_id=1099988204]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="W2/Area2D" unique_id=1687160351]
+scale = Vector2(6.7301345, 7.2951326)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="W2" unique_id=1356875804]
+scale = Vector2(0.63383275, 0.6186194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="W2/enter_area" unique_id=261603332]
+scale = Vector2(0.3254798, 0.31630307)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="W2" unique_id=1886735876]
+scale = Vector2(0.8045641, 0.7304294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="W2/exit_area" unique_id=132894511]
+scale = Vector2(0.31698737, 0.32844278)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="W2" unique_id=1074518022]
+wait_time = 2.0
+
+[node name="A2" type="CharacterBody2D" parent="." unique_id=305959767]
+position = Vector2(1206.0001, 245)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A2" unique_id=1110827509]
+scale = Vector2(2.4916167, -1.7867972)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="A2" unique_id=172020469]
+position = Vector2(282.5444, 283.9615)
+scale = Vector2(2.1194606, 2.1281517)
+texture = ExtResource("7_pjvq5")
+
+[node name="Area2D" type="Area2D" parent="A2" unique_id=2025299275]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="A2/Area2D" unique_id=1767987795]
+scale = Vector2(6.7301345, 7.2951326)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="A2" unique_id=525130732]
+scale = Vector2(0.63383275, 0.6186194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A2/enter_area" unique_id=1932326291]
+scale = Vector2(0.3254798, 0.31630307)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="A2" unique_id=2073381585]
+scale = Vector2(0.8045641, 0.7304294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A2/exit_area" unique_id=930197252]
+scale = Vector2(0.31698737, 0.32844278)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="A2" unique_id=234221200]
+wait_time = 2.0
+
+[node name="S2" type="CharacterBody2D" parent="." unique_id=1265017340]
+position = Vector2(1273.0001, 247)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="S2" unique_id=2088034108]
+scale = Vector2(2.4916167, -1.7867972)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="S2" unique_id=1781581157]
+position = Vector2(158.80206, 283.96152)
+scale = Vector2(2.1194606, 2.1281517)
+texture = ExtResource("5_7yci7")
+
+[node name="Area2D" type="Area2D" parent="S2" unique_id=564512557]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="S2/Area2D" unique_id=373616548]
+scale = Vector2(6.7301345, 7.2951326)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="S2" unique_id=1298891508]
+scale = Vector2(0.63383275, 0.6186194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="S2/enter_area" unique_id=1386696148]
+scale = Vector2(0.3254798, 0.31630307)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="S2" unique_id=241985709]
+scale = Vector2(0.8045641, 0.7304294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="S2/exit_area" unique_id=746284018]
+scale = Vector2(0.31698737, 0.32844278)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="S2" unique_id=2004438222]
+wait_time = 2.0
+
+[node name="D2" type="CharacterBody2D" parent="." unique_id=168714108]
+position = Vector2(1339, 247.99998)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2" unique_id=1243085883]
+scale = Vector2(2.4916167, -1.7867972)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="D2" unique_id=1598996940]
+position = Vector2(35.06024, 283.96152)
+scale = Vector2(2.1194606, 2.1281517)
+texture = ExtResource("6_4u46g")
+
+[node name="Area2D" type="Area2D" parent="D2" unique_id=704161203]
+scale = Vector2(0.8522233, 0.7483928)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="D2/Area2D" unique_id=1460903999]
+scale = Vector2(6.7301345, 7.2951326)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="D2" unique_id=346026867]
+scale = Vector2(0.63383275, 0.6186194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2/enter_area" unique_id=653794398]
+scale = Vector2(0.3254798, 0.31630307)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="D2" unique_id=33047854]
+scale = Vector2(0.8045641, 0.7304294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2/exit_area" unique_id=1391601822]
+scale = Vector2(0.31698737, 0.32844278)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="D2" unique_id=1153064509]
+wait_time = 2.0
+
+[node name="Youre2" type="CharacterBody2D" parent="." unique_id=1789828356]
+position = Vector2(953, -233)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Youre2" unique_id=1770094254]
+position = Vector2(-4.124736, 63.746456)
+scale = Vector2(17.12207, 5.114555)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Youre2" unique_id=518978731]
+position = Vector2(-278.41968, -156.46857)
+scale = Vector2(2.0722332, 2.1261828)
+texture = ExtResource("3_ipdvu")
+
+[node name="Area2D" type="Area2D" parent="Youre2" unique_id=1543712964]
+scale = Vector2(0.8399474, 3.268624)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Youre2/Area2D" unique_id=1626238400]
+scale = Vector2(22.648012, 4.4899783)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="Youre2" unique_id=400056089]
+scale = Vector2(0.84654343, 0.83986145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Youre2/enter_area" unique_id=1775560580]
+scale = Vector2(0.4677957, 0.4863263)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="Youre2" unique_id=2097568782]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Youre2/exit_area" unique_id=1302751154]
+scale = Vector2(0.46538928, 0.4957508)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="Youre2" unique_id=1720379349]
+wait_time = 2.0
+
+[node name="Shrinking2" type="CharacterBody2D" parent="." unique_id=1402508434]
+position = Vector2(964.00006, -82)
+scale = Vector2(0.4848795, 0.5176758)
+script = ExtResource("10_4u46g")
+speed = 600.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrinking2" unique_id=1084837361]
+position = Vector2(0, 3.8634186)
+scale = Vector2(29.783388, 4.0755677)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Shrinking2" unique_id=2147260681]
+position = Vector2(-158.80234, -413.38608)
+scale = Vector2(2.0722332, 2.1261828)
+texture = ExtResource("1_h8scx")
+
+[node name="Area2D" type="Area2D" parent="Shrinking2" unique_id=113325526]
+scale = Vector2(1.4318041, 3.222234)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Shrinking2/Area2D" unique_id=1012739185]
+scale = Vector2(22.648012, 4.4899783)
+shape = SubResource("RectangleShape2D_ipdvu")
+disabled = true
+
+[node name="enter_area" type="Area2D" parent="Shrinking2" unique_id=1733792847]
+scale = Vector2(0.84654343, 0.83986145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrinking2/enter_area" unique_id=1838950946]
+scale = Vector2(0.7664519, 0.4328668)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="exit_area" type="Area2D" parent="Shrinking2" unique_id=1889612691]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrinking2/exit_area" unique_id=1305566601]
+scale = Vector2(0.84876835, 0.49494213)
+shape = SubResource("CircleShape2D_x6eet")
+
+[node name="Timer" type="Timer" parent="Shrinking2" unique_id=1019815272]
+wait_time = 2.0
+
 [connection signal="body_entered" from="SpaceBar/Area2D" to="SpaceBar" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="SpaceBar/Area2D" to="SpaceBar" method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_entered" from="SpaceBar/enter_area" to="SpaceBar" method="_on_enter_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="SpaceBar/exit_area" to="SpaceBar" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="Arrow2/Area2D" to="Arrow2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Arrow2/enter_area" to="Arrow2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="Arrow2/exit_area" to="Arrow2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="W2/Area2D" to="W2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="W2/enter_area" to="W2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="W2/exit_area" to="W2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="A2/Area2D" to="A2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="A2/enter_area" to="A2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="A2/exit_area" to="A2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="S2/Area2D" to="S2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="S2/enter_area" to="S2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="S2/exit_area" to="S2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="D2/Area2D" to="D2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="D2/enter_area" to="D2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="D2/exit_area" to="D2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="Youre2/Area2D" to="Youre2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Youre2/enter_area" to="Youre2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="Youre2/exit_area" to="Youre2" method="_on_exit_area_body_shape_exited"]
+[connection signal="body_entered" from="Shrinking2/Area2D" to="Shrinking2" method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Shrinking2/enter_area" to="Shrinking2" method="_on_enter_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="Shrinking2/exit_area" to="Shrinking2" method="_on_exit_area_body_shape_exited"]
