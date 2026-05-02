@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	else: 
 		$CenterContainer/VBoxContainer/HBoxContainer3/Min.text = str("0"+str(minutes))
 	if minutes == 0 and seconds == 0 and dsec == 0:
-		get_tree().change_scene_to_file("res://Levels/end_credits.tscn")
+		LoadingScreen.change_scene_to("res://Levels/end_credits.tscn")
 	
 func _on_timer_timeout() -> void:
 	dsec -= 1
