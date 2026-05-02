@@ -19,7 +19,6 @@ func _on_main_menu_pressed() -> void:
 	LoadingScreen.change_scene_to("res://Levels/Main Menu/main_menu.tscn")
 
 func _on_credits_pressed() -> void:
-	Global.restart = true
 	LoadingScreen.change_scene_to("res://Levels/credits.tscn")
 
 func _on_quit_pressed() -> void:

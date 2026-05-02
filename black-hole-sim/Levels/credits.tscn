@@ -18,13 +18,7 @@ bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.5058824)
 bg_color = Color(0.19076231, 0.19076234, 0.19076222, 0.5058824)
 shadow_color = Color(0, 0, 0, 0)
 
-[node name="Credits" type="Control" unique_id=164157331]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Credits" type="CanvasLayer" unique_id=1451983611]
 script = ExtResource("1_c1t8d")
 
 [node name="end_spawner" parent="." unique_id=1057083513 instance=ExtResource("3_mn1va")]
@@ -34,7 +28,6 @@ point_1 = Vector2(70, -232)
 point_1 = Vector2(70, -232)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1194321562]
-layout_mode = 0
 offset_right = 1917.0
 offset_bottom = 1077.0
 theme_override_constants/margin_left = 140
