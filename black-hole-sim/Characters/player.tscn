@@ -4,20 +4,27 @@
 [ext_resource type="Texture2D" uid="uid://o8c7qveoet3q" path="res://Sprites/BlackHole/Paint Layer 1.PNG" id="2_vb825"]
 [ext_resource type="Texture2D" uid="uid://dd4ryvanlqnup" path="res://Sprites/BlackHole/Paint Layer 2.PNG" id="3_65n15"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l48on"]
-radius = 211.97166
-
 [sub_resource type="Gradient" id="Gradient_vb825"]
 offsets = PackedFloat32Array(0.063535914, 0.6519337, 0.9917127, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.013527367, 0.013527367, 0.013527367, 1, 0, 0, 0, 1, 0.10497238, 0.10497238, 0.10497238, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_65n15"]
 gradient = SubResource("Gradient_vb825")
+width = 500
+height = 500
+use_hdr = true
 fill = 1
 fill_from = Vector2(0.491453, 0.51282054)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l48on"]
+radius = 211.97166
+
 [node name="Player" type="CharacterBody2D" unique_id=780335499]
 script = ExtResource("1_5mj4t")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=436508871]
+energy = 0.5
+texture = SubResource("GradientTexture2D_65n15")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1578408206]
 shape = SubResource("CircleShape2D_l48on")
@@ -44,12 +51,6 @@ autostart = true
 wait_time = 30.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1804135751]
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=436508871]
-scale = Vector2(10.846181, 10.846181)
-color = Color(0, 0, 0, 1)
-energy = 0.5
-texture = SubResource("GradientTexture2D_65n15")
 
 [connection signal="timeout" from="Scale Update" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Haking Radition" to="." method="_on_haking_radition_timeout"]

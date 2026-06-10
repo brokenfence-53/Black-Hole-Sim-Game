@@ -16,6 +16,13 @@
 [ext_resource type="Script" uid="uid://bv5mtljukaoa5" path="res://Scences/asteriod_spawner.gd" id="9_rs4xw"]
 [ext_resource type="PackedScene" uid="uid://dh14bi6b2iwt2" path="res://Scences/tutorial.tscn" id="22_uclwg"]
 
+[sub_resource type="Environment" id="Environment_34erp"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_intensity = 1.12
+glow_bloom = 0.2
+
 [node name="Level_1" type="Node2D" unique_id=1545604944]
 script = ExtResource("1_0urlm")
 metadata/_edit_vertical_guides_ = [990.0, 251.0]
@@ -76,6 +83,12 @@ autostart = true
 [node name="Tutorial" parent="." unique_id=397608381 node_paths=PackedStringArray("player_node") instance=ExtResource("22_uclwg")]
 position = Vector2(30, 0)
 player_node = NodePath("../Player")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1526390370]
+environment = SubResource("Environment_34erp")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="WorldEnvironment" unique_id=1987756054]
+color = Color(0.24992323, 0.209353, 0.3274417, 1)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="finished" from="Exlpoding sun" to="." method="_on_exlpoding_sun_finished"]
